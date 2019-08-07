@@ -7,21 +7,29 @@ string linha;
   getline(cin, linha);
   cout << "Você digitou esta linha: " << linha << endl;
 */
+// implemente aqui seu programa ...
 #include <string>
 #include <iostream>
-
 using namespace std;
-
 int main() {
 	string v;
-  int j=0;
-
+	int j=0;
 	getline(cin, v);
 
-	for ((int i = 0); (i <= v.size()-1); i++) {
-		if (v[i] == ' ' && v[i+1] != 0) {
-      j++;
-    }
+	if (v.empty() == true) {
+		cout << j << endl;
+		exit(0);
 	}
+
+	if (v[0] != ' ') {
+		j++;
+	}
+
+	for (int i = 0; (i < (v.size()-1)); i++) {
+		if (v[i] == ' ' && v[i+1] != ' ') {
+			j++;
+		}
+	}
+	cout << j;
 	cout << endl;
 }

@@ -15,20 +15,16 @@
 using namespace std;
 
 string substitui(string texto, string sub, string outra) {
-  int found, subtam;
+	int found;
 
-  for (;;) {
-    found = texto.find(sub);
-    cout << found << endl;
-    if (found < 0) {
-      break;
-    }
-    subtam = sub.length();
-    cout << subtam << endl;
-    texto.replace(found, subtam, outra);
-    cout << texto << endl;
-  }
-  return texto;
+	for (int i=0;i==0;i++) {
+		found = texto.find(sub);
+		if (found < 0) {
+			break;
+		}
+		texto.replace(found, sub.length(), outra);
+	}
+	return texto;
 }
 
 int main() {

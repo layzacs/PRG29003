@@ -17,15 +17,13 @@ using namespace std;
 string substitui(string texto, string sub, string outra) {
 	int found;
 
-	for (int i=0;i==0;i++) {
-		found = texto.find(sub);
-		if (found < 0) {
-			break;
-		}
-		texto.replace(found, sub.length(), outra);
+	found = texto.find(sub);
+	if (found != string::npos) { // return value, string::npos significa um valor válido da string. Usa-se para evitar erros devido a diferentes versões do c++ ou das bibliotecas.
+    break;
+	}
+	texto.replace(found, sub.length(), outra);
 	}
 	return texto;
-}
 
 int main() {
 	string texto, final, sub = "porta", outra = "mesa";

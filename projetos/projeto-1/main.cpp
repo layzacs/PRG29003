@@ -11,8 +11,8 @@ int busca_bfs() {
     string ator;
     string filme;
 
-    //fila<string> atores(1000);
-    //fila<string> filmes(1000);
+    fila<string> atores(1000);
+    fila<string> filmes(1000);
 
     cout << "Digite o nome do ator: ";
 

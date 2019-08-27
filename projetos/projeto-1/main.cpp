@@ -1,30 +1,34 @@
 #include <iostream>
 #include "Mapa.h"
 #include <prglib.h>
+#include <string>
+
 using namespace std;
-using prglib::fila;
+using namespace prglib;
 
 int busca_bfs() {
+
     string ator;
     string filme;
 
-    fila<string> atores(1000);
-    fila<string> filmes(1000);
+    //fila<string> atores(1000);
+    //fila<string> filmes(1000);
 
-    cout << "Digite o nome do ator:" << endl;
-    cin >> ator;
+    cout << "Digite o nome do ator: ";
 
-    cout << "shit happens";
+    getline(cin, ator);
 
-    Mapa dados("data/dados.txt");
+    cout << "O ator a ser procurado é: " << ator << endl;
+
+    Mapa dados("../data/dados.txt");
     filmes = dados.obtem_filmes("Kevin Bacon");
 
-    cout << "shit hapens again";
 
     while (! filmes.vazia()) {
         string umFilme = filmes.desenfileira();
         cout << "Filme: " << umFilme << endl;
     }
+
     return 0;
 }
 
@@ -50,6 +54,7 @@ int main() {
 
     cout << "Escolha entre as opções: \n1 - Calcular a distância de Bacon de um ator por meio do algoritmo de busca em largura.\n2 - Buscar a distância de Bacon de um ator por mei do algoritmo de busca em profundidade.\n3 - Listar filmes de Kevin Bacon." << endl;
     cin >> i;
+    cin.ignore();
 
     switch (i) {
         case 1:

@@ -7,8 +7,13 @@ using namespace std;
 using namespace prglib;
 
 
+//Variáveis globais
+Mapa dados("../data/dados.txt");
+fila<string> filmes(5000);
+
+
 // A string filmes é passada como parâmetro porque dentro da função serão adicionados novos filmes à ela.
-int busca_por_autor(string filme, string ator, fila<string> &filmes) {
+int busca_por_ator(string filme, string ator) {
 
     // Fila de atores é reiniciada toda vez que a função é chamada.
     fila<string> atores(1000);
@@ -17,7 +22,6 @@ int busca_por_autor(string filme, string ator, fila<string> &filmes) {
     fila<string> temp(1000);
 
     // Obtém os atores do filme passado como parâmetro.
-    Mapa dados("../data/dados.txt");
     atores = dados.obtem_atores(filme);
 
     while(! atores.vazia()) {
@@ -27,17 +31,20 @@ int busca_por_autor(string filme, string ator, fila<string> &filmes) {
         if (str.compare(ator) == 0) {
             return 1;
         }
-        // Adiciona os filmes em que o ator x trabalho ao final da lista filmes
 
-
+        // Adiciona os filmes em que o ator x trabalhou ao final da lista filmes
         else {
-            Mapa dados("../data/dados.txt");
             temp = dados.obtem_filmes(str);
-            string x;
+            int exp = temp.comprimento();
+            // O tamanho da fila é expandido de acordo com o tamanho da fila temporária
+            filmes.expande(exp);
+
             while (! temp.vazia()) {
                 string x = temp.desenfileira();
-                cout << "O filme " << x << " foi adicionado a fila." << endl;
                 filmes.enfileira(x);
+                //cout << "O filme " << x << " foi adicionado a fila." << endl;
+                //cout << "Comprimento de filmes: " << filmes.comprimento() << endl;
+
             }
         }
 
@@ -51,7 +58,8 @@ int busca_bfs() {
     string filme;
     int n_filmes;
     int i = 0;
-    fila<string> filmes(10000);
+
+
 
     cout << "Digite o nome do ator: ";
 
@@ -59,32 +67,21 @@ int busca_bfs() {
 
     cout << "O ator a ser procurado é: " << ator << endl;
 
-
-    Mapa dados("../data/dados.txt");
     filmes = dados.obtem_filmes("Kevin Bacon");
 
-    n_filmes = filmes.comprimento();
+    //n_filmes = 10000;
 
-    while(i < n_filmes) {
+    while(filmes.comprimento() > 0) {
 
         string filme = filmes.desenfileira();
         cout << "Filme a ser varrido:" << filme << endl;
-        if (busca_por_autor(filme, ator, filmes) == 1) {
+        if (busca_por_ator(filme, ator) == 1) {
             cout << "O ator " << ator << " foi encontrado!" << endl;
             cout << "Número de buscas realizadas: " << i << endl;
             exit(0);
         }
         i++;
     }
-
-    /*
-    while (! filmes.vazia()) {
-        string umFilme = filmes.desenfileira();
-        cout << "Filme: " << umFilme << endl;
-    }
-    */
-
-
     return 0;
 }
 

@@ -56,10 +56,7 @@ int busca_bfs() {
 
     string ator;
     string filme;
-    int n_filmes;
     int i = 0;
-
-
 
     cout << "Digite o nome do ator: ";
 
@@ -68,8 +65,6 @@ int busca_bfs() {
     cout << "O ator a ser procurado é: " << ator << endl;
 
     filmes = dados.obtem_filmes("Kevin Bacon");
-
-    //n_filmes = 10000;
 
     while(filmes.comprimento() > 0) {
 
@@ -82,6 +77,7 @@ int busca_bfs() {
         }
         i++;
     }
+    cout << "O ator " << ator << " não foi encontrado." << endl;
     return 0;
 }
 

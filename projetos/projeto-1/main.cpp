@@ -17,17 +17,19 @@ struct dados_atores {
     int distancia_bacon;
 };
 
-int busca_bfs() {
-    string ator_procurado;
+int busca_dfs(string ator_procurado) {
+
+}
+
+
+int busca_bfs(string ator_procurado) {
+
     string kevin_bacon = "Kevin Bacon";
 
-    cout << "Digite o nome do ator:";
 
-    getline(cin, ator_procurado);
-
-    cout << "O ator a ser procurado é: " << ator_procurado << endl;
-
-
+    if (ator_procurado == kevin_bacon) {
+        cout << "A distância entre Kevin Bacon e Kevin Bacon é zero! Por favor escolha um ator DIFERENTE de Kevin Bacon." << endl;
+    }
     fila<struct dados_atores> todos_atores(1000000);
     fila<string> filmes_bacon(100);
 
@@ -52,6 +54,7 @@ int busca_bfs() {
                 cout << "O ator " << ator_pai << " foi encontrado!" << endl;
                 cout << "Sua distância de Bacon é: " << id_pai.distancia_bacon << endl;
                 cout << id_pai.caminho << endl;
+                return 0;
             }
         }
     }
@@ -79,7 +82,7 @@ int busca_bfs() {
                     cout << "O ator " << ator_neto << " foi encontrado!" << endl;
                     cout << "Sua distância de Bacon é: " << id_neto.distancia_bacon << endl;
                     cout << "Caminho feito: " << id_neto.caminho << endl;
-
+                    return 0;
                 }
 
                 todos_atores.enfileira(id_neto);
@@ -87,22 +90,7 @@ int busca_bfs() {
         }
 
     }
-
-    return 1;
-}
-
-int lista_filmes() {
-
-    Mapa mapa("../data/dados.txt");
-
-    fila<string> q = mapa.obtem_filmes(bacon);
-    int n = q.comprimento();
-
-    while (! q.vazia()) {
-        cout << q.desenfileira() << endl;
-    }
-
-    cout << bacon << " atuou em " << n << " filmes" << endl;
+    cout << "Este ator não existe ou nunca fez um filme com o Kevin Bacon. :(" << endl;
     return 0;
 }
 
@@ -117,17 +105,33 @@ int main() {
 
     switch (i) {
         case 1:
-            busca_bfs();
-            break;
+            while(true) {
+                string ator_procurado;
+                cout << "Digite o nome do ator a ser procurado (para sair do programa, aperte enter): ";
+
+                getline(cin, ator_procurado);
+
+                if (ator_procurado.size() == 0) {
+                    exit(0);
+                }
+
+                busca_bfs(ator_procurado);
+            }
 
         case 2:
-            //busca_dfs();
-            break;
 
-        case 3:
-            lista_filmes();
-            break;
+            while(true) {
+                string ator_procurado;
+                cout << "Digite o nome do ator a ser procurado (para sair do programa, aperte enter): ";
 
+                getline(cin, ator_procurado);
+
+                if (ator_procurado.size() == 0) {
+                    exit(0);
+                }
+
+                busca_dfs(ator_procurado);
+            }
     }
     return 0;
 }

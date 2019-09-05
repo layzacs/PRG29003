@@ -8,77 +8,87 @@ using namespace prglib;
 
 
 //Variáveis globais
+
 Mapa dados("../data/dados.txt");
-fila<string> filmes(5000);
+
+struct dados_atores {
+    string ator;
+    string caminho;
+    int distancia_bacon;
+};
+
+int busca_bfs() {
+    string ator_procurado;
+    string kevin_bacon = "Kevin Bacon";
+
+    cout << "Digite o nome do ator:";
+
+    getline(cin, ator_procurado);
+
+    cout << "O ator a ser procurado é: " << ator_procurado << endl;
 
 
-// A string filmes é passada como parâmetro porque dentro da função serão adicionados novos filmes à ela.
-int busca_por_ator(string filme, string ator) {
+    fila<struct dados_atores> todos_atores(1000000);
+    fila<string> filmes_bacon(100);
 
-    // Fila de atores é reiniciada toda vez que a função é chamada.
-    fila<string> atores(1000);
+    filmes_bacon = dados.obtem_filmes("Kevin Bacon");
 
-    // Fila temp serve apenas para armazenar os valores a serem enfileirados na string filmes.
-    fila<string> temp(1000);
+    while(! filmes_bacon.vazia()) {
+        string filme_pai = filmes_bacon.desenfileira();
 
-    // Obtém os atores do filme passado como parâmetro.
-    atores = dados.obtem_atores(filme);
+        fila<string> atores_pai = dados.obtem_atores(filme_pai);
 
-    while(! atores.vazia()) {
-        string str = atores.desenfileira();
-        //cout << "Ator a ser testado: " << str << endl;
+        while(! atores_pai.vazia()) {
+            string ator_pai = atores_pai.desenfileira();
 
-        if (str.compare(ator) == 0) {
-            return 1;
+            struct dados_atores id_pai;
+            id_pai.ator = ator_pai;
+            id_pai.caminho = kevin_bacon + " / " + filme_pai + " / " + ator_pai;
+            id_pai.distancia_bacon = 1;
+
+            todos_atores.enfileira(id_pai);
+
+            if (ator_pai == ator_procurado) {
+                cout << "O ator " << ator_pai << " foi encontrado!" << endl;
+                cout << "Sua distância de Bacon é: " << id_pai.distancia_bacon << endl;
+                cout << id_pai.caminho << endl;
+            }
         }
+    }
 
-        // Adiciona os filmes em que o ator x trabalhou ao final da lista filmes
-        else {
-            temp = dados.obtem_filmes(str);
-            int exp = temp.comprimento();
-            // O tamanho da fila é expandido de acordo com o tamanho da fila temporária
-            filmes.expande(exp);
+    while (! todos_atores.vazia()) {
+        struct dados_atores id_filho = todos_atores.desenfileira();
+        string ator_filho = id_filho.ator;
 
-            while (! temp.vazia()) {
-                string x = temp.desenfileira();
-                filmes.enfileira(x);
-                //cout << "O filme " << x << " foi adicionado a fila." << endl;
-                //cout << "Comprimento de filmes: " << filmes.comprimento() << endl;
+        fila<string> filmes_filho = dados.obtem_filmes(ator_filho);
 
+        while(! filmes_filho.vazia()) {
+            string filme_filho = filmes_filho.desenfileira();
+            fila<string> atores_neto = dados.obtem_atores(filme_filho);
+
+            while(! atores_neto.vazia()) {
+
+                string ator_neto = atores_neto.desenfileira();
+
+                struct dados_atores id_neto;
+                id_neto.ator = ator_neto;
+                id_neto.caminho = id_filho.caminho + " / " + filme_filho + " / " + ator_neto;
+                id_neto.distancia_bacon = id_filho.distancia_bacon + 1;
+
+                if (ator_neto == ator_procurado) {
+                    cout << "O ator " << ator_neto << " foi encontrado!" << endl;
+                    cout << "Sua distância de Bacon é: " << id_neto.distancia_bacon << endl;
+                    cout << "Caminho feito: " << id_neto.caminho << endl;
+
+                }
+
+                todos_atores.enfileira(id_neto);
             }
         }
 
     }
-    return 0;
-}
 
-int busca_bfs() {
-
-    string ator;
-    string filme;
-    int i = 0;
-
-    cout << "Digite o nome do ator: ";
-
-    getline(cin, ator);
-
-    cout << "O ator a ser procurado é: " << ator << endl;
-
-    filmes = dados.obtem_filmes("Kevin Bacon");
-
-    while(filmes.comprimento() > 0) {
-
-        string filme = filmes.desenfileira();
-        cout << "Filme a ser varrido:" << filme << endl;
-        if (busca_por_ator(filme, ator) == 1) {
-            cout << "O ator " << ator << " foi encontrado!" << endl;
-            cout << "Número de buscas realizadas: " << i << endl;
-            exit(0);
-        }
-        i++;
-    }
-    cout << "O ator " << ator << " não foi encontrado." << endl;
-    return 0;
+    return 1;
 }
 
 int lista_filmes() {

@@ -12,26 +12,6 @@ using std::string;
 using std::cout;
 using prglib::lista;
 
-
-
-
-/*
-lista<string> separa(const string & texto, const string & sep) {
-
-    int found = 0;
-    lista<string> l;
-    string inicial = texto;
-
-    while (found != -1 && (! inicial.empty())) {
-        found = inicial.find(sep);
-        l.anexa(inicial.substr(0, found));
-        inicial = inicial.substr (found + sep.size());
-
-    }
-    return l;
-}
-*/
-
 lista<string> separa(const string & texto, const string & sep) {
 
     int found = 0;

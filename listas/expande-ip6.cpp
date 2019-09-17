@@ -1,7 +1,5 @@
 #include "questao.h"
 
-
-
 string expande_ipv6(const string & ip6) {
     int j=0;
     int i = 0;
@@ -21,8 +19,6 @@ string expande_ipv6(const string & ip6) {
         j++;
     }
 
-    //l = separa(aux, separador);
-    //aux = junta(l, separador);
     for (i=0; i<aux.size(); i++) {
         if (aux[0]==':') {
             aux.insert(0,1,'0');

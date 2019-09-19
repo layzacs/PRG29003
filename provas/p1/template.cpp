@@ -5,7 +5,6 @@ using namespace std;
 using namespace prglib;
 
 int main() {
-
 }
 
 /********** para quando o nome do arquivo ou parametro for passado pela linha de comando

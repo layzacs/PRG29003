@@ -1,16 +1,16 @@
-//
-// Created by msobral on 22/08/2019.
-//
-
 #include "proc.h"
-#include <fstream>
-#include <iostream>
-#include <prglib.h>
 
-using std::ifstream;
-using std::string;
-using std::cout;
-using prglib::lista;
+int procura_ator(string colega, lista<string>colegas) {
+    colegas.inicia();
+    int cont=0;
+    while(!colegas.fim()) {
+        string aux = colegas.proximo();
+        if (aux == colega) {
+            cont++;
+        }
+    }
+    return cont;
+}
 
 lista<string> separa(const string & texto, const string & sep) {
 
@@ -78,3 +78,52 @@ lista<string> obtem_filmes(const string & ator, lista<filmes> todos_filmes) {
     }
     return filmes_ator;
 }
+
+lista<string> obtem_colegas(const string & ator, lista<filmes> todos_filmes) {
+    lista<string> colegas;
+    lista<string> filmes_ator;
+
+    struct filmes x;
+
+    todos_filmes.inicia();
+
+    while(!todos_filmes.fim()) {
+        x = todos_filmes.proximo();
+        lista<string> aux = x.atores;
+        x.atores.inicia();
+        while (!x.atores.fim()) {
+            if (x.atores.proximo() == ator) {
+                aux.inicia();
+
+                while (!aux.fim()) {
+                    string colega = aux.proximo();
+
+                    int repetido = procura_ator(colega, colegas);
+
+                    if (repetido == 0 && colega != ator) {
+                        colegas.anexa(colega);
+                    }
+                }
+                break;
+            }
+        }
+
+    }
+    return colegas;
+}
+/*
+lista<string> ordena_atores(lista<filmes> todos_filmes) {
+    todos_filmes.inicia();
+    lista<string> todos_atores();
+    while (!todos_filmes.fim()) {
+        struct filmes aux = todos_filmes.proximo();
+        aux.atores.inicia();
+        while(!aux.atores.fim()) {
+            string ator = aux.atores.proximo();
+
+            int repetido = procura_ator(colega, ator, colegas);
+
+        }
+
+    }
+*/

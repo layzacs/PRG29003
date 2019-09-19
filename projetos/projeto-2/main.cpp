@@ -20,21 +20,87 @@
 // 06082019      layzacs     1      Criada a função busca_dfs.
 // 06082019      layzacs     1      Modificado nome de variáveis para denotar parentesco.
 //**********************************************************************************************************************;
-#include <iostream>
-#include "proc.h"
-#include <prglib.h>
-#include <string>
 
-using namespace std;
-using namespace prglib;
+#include "proc.h"
+
 
 int main() {
-    lista<filmes> teste;
+    int i;
+    cout << " " << endl;
 
-    teste = obtem_dados("../data/dados.txt");
-    string ator_teste = "Will Smith";
+    cout << "Escolha entre as opções: \n1 - Lista filmes.\n2 - Lista atores.\n3 - Os atores que trabalharam com um dado ator.\n 4 - Lista ordenada de atores de acordo com a quantidade de filme em que atuaram" << endl;
+    cin >> i;
+    cin.ignore();
 
-    lista<string> filmes_ator = obtem_filmes(ator_teste, teste);
-    cout << "Filmes do ator " << ator_teste << ":" << endl;
-    filmes_ator.escrevaSe(cout, ", ");
+    switch (i) {
+        case 1:
+
+            while (true) {
+                string ator_procurado;
+
+                lista<filmes> todos_filmes;
+                todos_filmes = obtem_dados("../data/dados.txt");
+
+                cout << "Digite o nome do ator pra listar seus filmes: ";
+                getline(cin, ator_procurado);
+
+                if (ator_procurado.empty()) {
+                    exit(0);
+                }
+                lista<string> filmes_ator = obtem_filmes(ator_procurado, todos_filmes);
+                cout << "Filmes do ator " << ator_procurado << ":" << endl;
+                filmes_ator.escrevaSe(cout, ", ");
+                cout << endl;
+
+            }
+
+        case 2:
+
+            while (true) {
+                string filme_procurado;
+
+                lista<filmes> todos_filmes;
+                todos_filmes = obtem_dados("../data/dados.txt");
+
+                cout << "Digite o nome do filme para listar seus atores: ";
+                getline(cin, filme_procurado);
+
+                if (filme_procurado.empty()) {
+                    exit(0);
+                }
+
+                lista<string> filmes_ator = obtem_atores(filme_procurado, todos_filmes);
+                cout << "Atores do filme " << filme_procurado << ":" << endl;
+                filmes_ator.escrevaSe(cout, ", ");
+
+            }
+        case 3:
+            while (true) {
+                string ator_procurado;
+
+                lista<filmes> todos_filmes;
+                todos_filmes = obtem_dados("../data/dados.txt");
+
+                cout << "Digite o nome do ator para listar os atores: ";
+                getline(cin, ator_procurado);
+
+                if (ator_procurado.empty()) {
+                    exit(0);
+                }
+                lista<string> colegas = obtem_colegas(ator_procurado, todos_filmes);
+                cout << "Os atores que trabalharam diretamente com " << ator_procurado << "são: " << endl;
+                colegas.escrevaSe(cout, ", ");
+                cout << endl;
+            }
+/*
+        case 4:
+            lista<filmes> todos_filmes;
+            todos_filmes = obtem_dados("../data/dados.txt");
+            lista<string> atores_ordenados = ordena_atores(todos_filmes);
+            cout << "Os primeiros 20 atores em ordem são: " << endl;
+            atores_ordenados.escrevaSe(cout, ", ");
+            exit(0);
+*/
+
+    }
 }

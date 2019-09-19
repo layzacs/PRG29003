@@ -91,28 +91,16 @@ libs/arvore.h
 -
 
 /home/layzacs/projetos/PRG29003/projetos/projeto-2/main.cpp
-iostream
--
 proc.h
 /home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.h
-prglib.h
--
+
+/home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.h
 string
 -
-
-/home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.cpp
-proc.h
-/home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.h
+prglib.h
+-
+iostream
+-
 fstream
--
-iostream
--
-prglib.h
--
-
-/home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.h
-string
--
-prglib.h
 -
 

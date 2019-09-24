@@ -15,10 +15,12 @@
 //
 // Revision History  :
 //
-// Date          Author      Ref    Revision (Date in YYYYMMDD format)
-// 04082019      layzacs     1      Reformulada a função busca_bfs.
-// 06082019      layzacs     1      Criada a função busca_dfs.
-// 06082019      layzacs     1      Modificado nome de variáveis para denotar parentesco.
+// Date          Author      Ref    Revision (Date in DDMMYYYY format)
+// 13092019      layzacs     1      cria função obtem_dados
+// 16092019      layzacs     2      cria funções obtem_filmes e obtem_atores
+// 19092019      layzacs     3      cria função obtem_colegas
+// 20092019      layzacs     4      cria função ordena_atores; cria nova struct ator; modifica função separa para não
+//                                  incluir mais strings vazias na lista de atores; cria operador para struct ator;
 //**********************************************************************************************************************;
 
 #include "proc.h"
@@ -28,79 +30,113 @@ int main() {
     int i;
     cout << " " << endl;
 
-    cout << "Escolha entre as opções: \n1 - Lista filmes.\n2 - Lista atores.\n3 - Os atores que trabalharam com um dado ator.\n 4 - Lista ordenada de atores de acordo com a quantidade de filme em que atuaram" << endl;
-    cin >> i;
-    cin.ignore();
 
-    switch (i) {
-        case 1:
 
-            while (true) {
-                string ator_procurado;
+    while(true) {
 
-                lista<filmes> todos_filmes;
-                todos_filmes = obtem_dados("../data/dados.txt");
+        cout << "Escolha entre as opções: \n1 - Lista filmes de um ator.\n2 - Lista atores que trabalharam em um filme.\n3 - Os atores que trabalharam com um dado ator.\n";
+        cout << "4 - Lista ordenada de atores de acordo com a quantidade de filmes em que atuaram.\n5 - Listar os atores que mais trabalharam com um certo ator.\n6 - Sair" << endl;
+        cin >> i;
+        cin.ignore();
+
+        int limite;
+        int k;
+        string ator;
+        string filme_procurado;
+        lista<string> filmes_ator;
+        lista<string> atores_filme;
+        lista<string> colegas;
+        lista<string> atores_ordenados;
+        lista<filmes> todos_filmes;
+        todos_filmes = obtem_dados("../data/dados.txt");
+
+
+        switch (i) {
+
+            case 1:
 
                 cout << "Digite o nome do ator pra listar seus filmes: ";
-                getline(cin, ator_procurado);
+                getline(cin, ator);
 
-                if (ator_procurado.empty()) {
-                    exit(0);
+                filmes_ator = obtem_filmes(ator, todos_filmes);
+                if (filmes_ator.vazia()) {
+                    cout << "O ator não foi encontrado." << endl;
+                } else {
+                    filmes_ator.escrevaSe(cout, "\n");
                 }
-                lista<string> filmes_ator = obtem_filmes(ator_procurado, todos_filmes);
-                cout << "Filmes do ator " << ator_procurado << ":" << endl;
-                filmes_ator.escrevaSe(cout, ", ");
                 cout << endl;
+                cout << endl;
+                break;
 
-            }
+            case 2:
 
-        case 2:
-
-            while (true) {
-                string filme_procurado;
-
-                lista<filmes> todos_filmes;
                 todos_filmes = obtem_dados("../data/dados.txt");
 
                 cout << "Digite o nome do filme para listar seus atores: ";
                 getline(cin, filme_procurado);
 
-                if (filme_procurado.empty()) {
-                    exit(0);
+
+                atores_filme = obtem_atores(filme_procurado, todos_filmes);
+                if (atores_filme.vazia()) {
+                    cout << "O filme não foi encontrado." << endl;
+                } else {
+                    atores_filme.escrevaSe(cout, "\n");
                 }
+                cout << endl;
+                cout << endl;
+                break;
 
-                lista<string> filmes_ator = obtem_atores(filme_procurado, todos_filmes);
-                cout << "Atores do filme " << filme_procurado << ":" << endl;
-                filmes_ator.escrevaSe(cout, ", ");
+            case 3:
 
-            }
-        case 3:
-            while (true) {
-                string ator_procurado;
-
-                lista<filmes> todos_filmes;
                 todos_filmes = obtem_dados("../data/dados.txt");
 
                 cout << "Digite o nome do ator para listar os atores: ";
-                getline(cin, ator_procurado);
+                getline(cin, ator);
 
-                if (ator_procurado.empty()) {
-                    exit(0);
+
+                colegas = obtem_colegas(ator, todos_filmes);
+
+                if (colegas.vazia()) {
+                    cout << "O ator dado não foi encontrado." << endl;
+                } else {
+                    cout << "Os atores que trabalharam diretamente com " << ator << " são: " << endl;
+                    colegas.escrevaSe(cout, "\n");
                 }
-                lista<string> colegas = obtem_colegas(ator_procurado, todos_filmes);
-                cout << "Os atores que trabalharam diretamente com " << ator_procurado << "são: " << endl;
-                colegas.escrevaSe(cout, ", ");
                 cout << endl;
-            }
-/*
-        case 4:
-            lista<filmes> todos_filmes;
-            todos_filmes = obtem_dados("../data/dados.txt");
-            lista<string> atores_ordenados = ordena_atores(todos_filmes);
-            cout << "Os primeiros 20 atores em ordem são: " << endl;
-            atores_ordenados.escrevaSe(cout, ", ");
-            exit(0);
-*/
+                cout << endl;
+                break;
 
+            case 4:
+                cout << "Quantos atores devem ser listados? (digite um valor válido, espaços não são lidos)" << endl;
+                cin >> limite;
+                cin.ignore();
+
+                ordena_atores(todos_filmes, limite);
+                cout << endl;
+
+                break;
+
+            case 5:
+                cout << "Digite o nome do ator pra listar seus filmes: ";
+                getline(cin, ator);
+                cout << "Quantos atores devem ser listados? (digite um valor válido, espaços não são lidos)" << endl;
+
+                cin >> limite;
+                cin.ignore();
+                cout << "Esta função demora em torno de 20 segundos para retornar o resultado. Seja paciente." << endl;
+                k = ordena_colegas(ator, todos_filmes, limite);
+
+                if (k == 0) {
+                    cout << "O ator dado não foi encontrado." << endl;
+                }
+                cout << endl;
+                break;
+
+            case 6:
+                exit(0);
+
+            default:
+                cout << "Opção Inválida" << endl;
+        }
     }
 }

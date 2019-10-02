@@ -70,8 +70,6 @@ int main() {
 
             case 2:
 
-                todos_filmes = obtem_dados("../data/dados.txt");
-
                 cout << "Digite o nome do filme para listar seus atores: ";
                 getline(cin, filme_procurado);
 
@@ -87,8 +85,6 @@ int main() {
                 break;
 
             case 3:
-
-                todos_filmes = obtem_dados("../data/dados.txt");
 
                 cout << "Digite o nome do ator para listar os atores: ";
                 getline(cin, ator);

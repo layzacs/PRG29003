@@ -90,6 +90,14 @@ libs/hash.h
 libs/arvore.h
 -
 
+/home/layzacs/projetos/PRG29003/projetos/projeto-1/Mapa.cpp
+Mapa.h
+/home/layzacs/projetos/PRG29003/projetos/projeto-1/Mapa.h
+fstream
+-
+iostream
+-
+
 /home/layzacs/projetos/PRG29003/projetos/projeto-1/Mapa.h
 string
 -
@@ -100,15 +108,5 @@ map
 set
 -
 prglib.h
--
-
-/home/layzacs/projetos/PRG29003/projetos/projeto-1/main.cpp
-iostream
--
-Mapa.h
-/home/layzacs/projetos/PRG29003/projetos/projeto-1/Mapa.h
-prglib.h
--
-string
 -
 

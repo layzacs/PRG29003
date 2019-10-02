@@ -13,6 +13,9 @@ int main() {
 #include <fstream>
 #include <iostream>
 
+using namespace std;
+using namespace prglib;
+
 int main(int argc, char * argv[]) {
     ifstream arquivo(argv[1]);
     string word;

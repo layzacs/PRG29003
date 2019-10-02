@@ -72,7 +72,7 @@ lista<string> obtem_atores(const string & filme, lista<filmes> todos_filmes) {
 // Na função obtem filmes, para cada filme na struct todos_filmes, é procurado em sua lista de atores o ator passado para a função.
 // Caso o ator seja encontrado, salva o nome do filme na lista de filmes do ator.
 lista<string> obtem_filmes(const string & ator, lista<filmes> todos_filmes) {
-    
+
     lista<string> filmes_ator;
     struct filmes x;
     todos_filmes.inicia();

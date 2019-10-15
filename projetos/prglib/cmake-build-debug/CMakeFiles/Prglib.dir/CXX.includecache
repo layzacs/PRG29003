@@ -43,6 +43,8 @@ cstddef
 -
 ostream
 -
+istream
+-
 string
 -
 algorithm
@@ -76,7 +78,7 @@ libs/hash.h
 libs/arvore.h
 -
 
-/home/msobral/CLionProjects/Prglib/main.cpp
+/home/layzacs/projetos/PRG29003/projetos/prglib/main.cpp
 iostream
 -
 prglib.h

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/msobral/CLionProjects/Prglib/main.cpp" "/home/msobral/CLionProjects/Prglib/cmake-build-debug/CMakeFiles/Prglib.dir/main.cpp.o"
+  "/home/layzacs/projetos/PRG29003/projetos/prglib/main.cpp" "/home/layzacs/projetos/PRG29003/projetos/prglib/cmake-build-debug/CMakeFiles/Prglib.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

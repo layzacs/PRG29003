@@ -1,3 +1,3 @@
-/home/msobral/CLionProjects/Prglib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/msobral/CLionProjects/Prglib/cmake-build-debug/CMakeFiles/Prglib.dir
-/home/msobral/CLionProjects/Prglib/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/layzacs/projetos/PRG29003/projetos/prglib/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/layzacs/projetos/PRG29003/projetos/prglib/cmake-build-debug/CMakeFiles/Prglib.dir
+/home/layzacs/projetos/PRG29003/projetos/prglib/cmake-build-debug/CMakeFiles/edit_cache.dir

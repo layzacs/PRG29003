@@ -28,6 +28,5 @@ CMakeFiles/Bacon.dir/main.cpp.o: .././libs/lista.h
 CMakeFiles/Bacon.dir/main.cpp.o: .././libs/pilha-impl.h
 CMakeFiles/Bacon.dir/main.cpp.o: .././libs/pilha.h
 CMakeFiles/Bacon.dir/main.cpp.o: .././prglib.h
-CMakeFiles/Bacon.dir/main.cpp.o: ../Mapa.h
 CMakeFiles/Bacon.dir/main.cpp.o: ../main.cpp
 

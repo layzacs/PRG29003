@@ -57,22 +57,9 @@ include CMakeFiles/dicionario.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/dicionario.dir/flags.make
 
-CMakeFiles/dicionario.dir/verbete.cpp.o: CMakeFiles/dicionario.dir/flags.make
-CMakeFiles/dicionario.dir/verbete.cpp.o: ../verbete.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dicionario.dir/verbete.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dicionario.dir/verbete.cpp.o -c /home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp
-
-CMakeFiles/dicionario.dir/verbete.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dicionario.dir/verbete.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp > CMakeFiles/dicionario.dir/verbete.cpp.i
-
-CMakeFiles/dicionario.dir/verbete.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dicionario.dir/verbete.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp -o CMakeFiles/dicionario.dir/verbete.cpp.s
-
 CMakeFiles/dicionario.dir/main.cpp.o: CMakeFiles/dicionario.dir/flags.make
 CMakeFiles/dicionario.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dicionario.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dicionario.dir/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dicionario.dir/main.cpp.o -c /home/layzacs/projetos/PRG29003/projetos/projeto-4/main.cpp
 
 CMakeFiles/dicionario.dir/main.cpp.i: cmake_force
@@ -83,24 +70,36 @@ CMakeFiles/dicionario.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dicionario.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/layzacs/projetos/PRG29003/projetos/projeto-4/main.cpp -o CMakeFiles/dicionario.dir/main.cpp.s
 
+CMakeFiles/dicionario.dir/verbete.cpp.o: CMakeFiles/dicionario.dir/flags.make
+CMakeFiles/dicionario.dir/verbete.cpp.o: ../verbete.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dicionario.dir/verbete.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dicionario.dir/verbete.cpp.o -c /home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp
+
+CMakeFiles/dicionario.dir/verbete.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dicionario.dir/verbete.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp > CMakeFiles/dicionario.dir/verbete.cpp.i
+
+CMakeFiles/dicionario.dir/verbete.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dicionario.dir/verbete.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp -o CMakeFiles/dicionario.dir/verbete.cpp.s
+
 # Object files for target dicionario
 dicionario_OBJECTS = \
-"CMakeFiles/dicionario.dir/verbete.cpp.o" \
-"CMakeFiles/dicionario.dir/main.cpp.o"
+"CMakeFiles/dicionario.dir/main.cpp.o" \
+"CMakeFiles/dicionario.dir/verbete.cpp.o"
 
 # External object files for target dicionario
 dicionario_EXTERNAL_OBJECTS =
 
-libdicionario.a: CMakeFiles/dicionario.dir/verbete.cpp.o
-libdicionario.a: CMakeFiles/dicionario.dir/main.cpp.o
-libdicionario.a: CMakeFiles/dicionario.dir/build.make
-libdicionario.a: CMakeFiles/dicionario.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libdicionario.a"
-	$(CMAKE_COMMAND) -P CMakeFiles/dicionario.dir/cmake_clean_target.cmake
+dicionario: CMakeFiles/dicionario.dir/main.cpp.o
+dicionario: CMakeFiles/dicionario.dir/verbete.cpp.o
+dicionario: CMakeFiles/dicionario.dir/build.make
+dicionario: CMakeFiles/dicionario.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable dicionario"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dicionario.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/dicionario.dir/build: libdicionario.a
+CMakeFiles/dicionario.dir/build: dicionario
 
 .PHONY : CMakeFiles/dicionario.dir/build
 

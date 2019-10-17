@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="dicionario"/>
+		<Option title="Bacon"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -27,8 +27,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="dicionario">
-				<Option output="/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/dicionario" prefix_auto="0" extension_auto="0"/>
+			<Target title="Bacon">
+				<Option output="/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Bacon" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -45,14 +45,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 dicionario"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 Bacon"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="dicionario/fast">
-				<Option output="/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/dicionario" prefix_auto="0" extension_auto="0"/>
+			<Target title="Bacon/fast">
+				<Option output="/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Bacon" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -69,7 +69,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 dicionario/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 Bacon/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -87,16 +87,16 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/main.cpp">
-			<Option target="dicionario"/>
+			<Option target="Bacon"/>
 		</Unit>
 		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/prglib.h">
-			<Option target="dicionario"/>
+			<Option target="Bacon"/>
 		</Unit>
-		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp">
-			<Option target="dicionario"/>
+		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/proc.cpp">
+			<Option target="Bacon"/>
 		</Unit>
-		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.h">
-			<Option target="dicionario"/>
+		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/proc.h">
+			<Option target="Bacon"/>
 		</Unit>
 		<Unit filename="/home/layzacs/projetos/PRG29003/projetos/projeto-4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

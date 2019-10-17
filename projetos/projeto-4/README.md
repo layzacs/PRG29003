@@ -27,3 +27,13 @@ while (true) {
   } catch (...) {
     break;
   }
+
+## Função cria_verbete
+
+A função cria_verbete deve criar um verbete por vez.
+Processo de criação:
+
+Abre o arquivo do ponto em que foi interrompido:
+Primeira linha sempre vai ser a palavra.
+A segunda linha sempre vai ser a classe gramatical.
+Da terceira linha em diante podemos ter um ou mais significados (até chega em uma linha em que '(' seja o primeiro caractere)

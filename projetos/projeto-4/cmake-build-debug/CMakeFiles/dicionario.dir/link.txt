@@ -1,2 +1,1 @@
-/usr/bin/ar qc libdicionario.a  CMakeFiles/dicionario.dir/verbete.cpp.o CMakeFiles/dicionario.dir/main.cpp.o
-/usr/bin/ranlib libdicionario.a
+/usr/bin/c++  -g   CMakeFiles/dicionario.dir/main.cpp.o CMakeFiles/dicionario.dir/verbete.cpp.o  -o dicionario 

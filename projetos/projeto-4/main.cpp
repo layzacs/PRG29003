@@ -4,7 +4,7 @@
 // Author            : layzacs
 //
 //
-// Date created      :
+// Date created      : 15102019
 //
 //**********************************************************************************************************************;
 
@@ -13,14 +13,37 @@
 int main() {
     int i;
     cout << "Dicionário da Lingua Portuguesa" << endl;
+    Verbete a;
+    string teste;
+    ifstream arq("../data/verbetes.txt");
+    if (! arq.is_open()) {
+        cout << "Arquivo de dicionário Inválido." << endl;
+        exit(0);
+    }
 
     while (true) {
 
         cout << "Escolha entre as opções: \n1 - Preparar o dicionário.\n2 - Buscar verbete.\n";
-        cout << "4 - Listar ordenadamente atores de acordo com sua popularidade.\n5 - Listar ordenadamente atores que trabalharam em mais filmes.\n6 - Sair" << endl;
         cin >> i;
         cin.ignore();
 
-        exit(0);
+        switch (i) {
+
+            case 1: {
+
+                a = cria_verbete(arq);
+                cout << "Verbete criado." << endl;
+                cout << a.palavra << endl;
+                cout << a.classe_gramatical << endl;
+                a.significados.escrevaSe(cout, "\n");
+                cout << endl;
+                break;
+
+            }
+
+            default:
+                exit(0);
+        }
     }
+
 }

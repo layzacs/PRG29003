@@ -78,7 +78,11 @@ stack
 libs/pilha-impl.h
 -
 
-.././prglib.h
+/home/layzacs/projetos/PRG29003/projetos/projeto-4/main.cpp
+verbete.h
+/home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.h
+
+/home/layzacs/projetos/PRG29003/projetos/projeto-4/prglib.h
 libs/lista.h
 -
 libs/fila.h
@@ -90,13 +94,13 @@ libs/hash.h
 libs/arvore.h
 -
 
-/home/layzacs/projetos/PRG29003/projetos/projeto-1/main.cpp
-iostream
+/home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.h
+string
 -
 prglib.h
+/home/layzacs/projetos/PRG29003/projetos/projeto-4/prglib.h
+iostream
 -
 fstream
--
-string
 -
 

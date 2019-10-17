@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+Bacon_BINARY_DIR:STATIC=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug
+
+//Value Computed by CMake
+Bacon_SOURCE_DIR:STATIC=/home/layzacs/projetos/PRG29003/projetos/projeto-4
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
@@ -222,12 +228,6 @@ dicionario_BINARY_DIR:STATIC=/home/layzacs/projetos/PRG29003/projetos/projeto-4/
 
 //Value Computed by CMake
 dicionario_SOURCE_DIR:STATIC=/home/layzacs/projetos/PRG29003/projetos/projeto-4
-
-//Value Computed by CMake
-untitled_BINARY_DIR:STATIC=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug
-
-//Value Computed by CMake
-untitled_SOURCE_DIR:STATIC=/home/layzacs/projetos/PRG29003/projetos/projeto-4
 
 
 ########################

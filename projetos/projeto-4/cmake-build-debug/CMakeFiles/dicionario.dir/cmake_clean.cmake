@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/dicionario.dir/verbete.cpp.o"
   "CMakeFiles/dicionario.dir/main.cpp.o"
-  "libdicionario.pdb"
-  "libdicionario.a"
+  "CMakeFiles/dicionario.dir/verbete.cpp.o"
+  "dicionario.pdb"
+  "dicionario"
 )
 
 # Per-language clean rules from dependency scanning.

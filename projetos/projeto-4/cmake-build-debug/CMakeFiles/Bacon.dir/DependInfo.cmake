@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/layzacs/projetos/PRG29003/projetos/projeto-4/main.cpp" "/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles/dicionario.dir/main.cpp.o"
-  "/home/layzacs/projetos/PRG29003/projetos/projeto-4/verbete.cpp" "/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles/dicionario.dir/verbete.cpp.o"
+  "/home/layzacs/projetos/PRG29003/projetos/projeto-4/main.cpp" "/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles/Bacon.dir/main.cpp.o"
+  "/home/layzacs/projetos/PRG29003/projetos/projeto-4/proc.cpp" "/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles/Bacon.dir/proc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

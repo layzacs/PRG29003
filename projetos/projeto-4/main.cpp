@@ -30,13 +30,10 @@ int main() {
         switch (i) {
 
             case 1: {
+                auto arvore = prepara_dict(arq);
 
-                a = cria_verbete(arq);
-                cout << "Verbete criado." << endl;
-                cout << a.palavra << endl;
-                cout << a.classe_gramatical << endl;
-                a.significados.escrevaSe(cout, "\n");
-                cout << endl;
+
+
                 break;
 
             }

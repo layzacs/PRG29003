@@ -13,6 +13,7 @@
 #include <libs/pilha.h>
 #include <libs/hash.h>
 #include <libs/arvore.h>
+#include <libs/BasicTree.h>
 
 #endif	/* PRGLIB_H */
 

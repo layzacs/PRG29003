@@ -21,10 +21,15 @@ struct Verbete {
 
 };
 
+
+
 // Função prepara dicionário (pega todos os verbetes do arquivo
 //
-
+arvore<Verbete> * prepara_dict(ifstream & arq);
 // Função cria verbete
 Verbete cria_verbete(ifstream & arq);
+//
+
+
 
 #endif	/* LEMBRETE_H */

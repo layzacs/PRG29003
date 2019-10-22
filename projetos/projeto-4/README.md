@@ -37,3 +37,9 @@ Abre o arquivo do ponto em que foi interrompido:
 Primeira linha sempre vai ser a palavra.
 A segunda linha sempre vai ser a classe gramatical.
 Da terceira linha em diante podemos ter um ou mais significados (até chega em uma linha em que '(' seja o primeiro caractere)
+
+## Função prepara_dict
+
+Prepara o dicionário, pegando todos os verbetes do arquivo e salvando-os em uma árvore.
+Os dados serão balanceados na árvore e então a árvore será escrita em um arquivo.]
+

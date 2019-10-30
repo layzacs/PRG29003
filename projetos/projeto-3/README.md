@@ -28,3 +28,7 @@ OBS:
 - A interface de usuário deve estar desacoplada da funcionalidade de processamento da base de atores e filmes. Isso tem por objetivo modularizar o programa, de forma que a interface de usuário possa ser substituída com mínimas alterações no programa (ex: substituída por uma interface gráfica). Isso significa que:
 o código-fonte que implementa a interface de usuário deve estar em um arquivo separado, e as funcionalidades do processamento dos dados de filmes e atores devem estar em outro(s)
 deve existir um arquivo com extensão .h que declare as funções (ou classes) que implementam as funcionalidades de processamento de dados de atores e filmes: a interface de usuário deve incluir esse arquivo .h e usar as funções ali declaradas.
+
+## Usando o programa
+
+O programa foi escrito usando a IDE CLion. Não foi criado um executável do mesmo. Para rodá-lo, baixe a pasta contendo o projeto e abra-o com o CLion.

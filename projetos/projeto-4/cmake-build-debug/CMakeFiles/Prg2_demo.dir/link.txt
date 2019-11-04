@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Prg2_demo.dir/main.cpp.o CMakeFiles/Prg2_demo.dir/dicionario.cpp.o  -o Prg2_demo -L/home/layzacs/projetos/PRG29003/projetos/projeto-4/libs -lprglib 

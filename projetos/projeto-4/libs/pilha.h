@@ -34,16 +34,13 @@ template <typename T> class pilha : private std::stack<T> {
   T pop(); // desempilha um dado
  
   virtual const T& top() const; // retorna o dado do topo da pilha, sem retirá-lo
-
-  // remove todos os dados da pilha
-  void esvazia();
-  
+ 
   bool vazia() const;
   bool cheia() const;
   unsigned int comprimento() const;
+  void esvazia();
   unsigned int capacidade() const;
   
-  void expande(unsigned int N);
  private:
   unsigned int N;
 };

@@ -59,14 +59,6 @@ template <typename T> unsigned int fila<T>::comprimento() const {
     return this->size();
 }
 
-template <typename T> void fila<T>::expande(unsigned int N) {
-    this->N = N;
-}
-
-template <typename T> void fila<T>::esvazia() {
-    while (this->size() > 0) static_cast<std::queue<T>*>(this)->pop();
-}
-
 } // fim namespace
 
 #endif	/* FILA_IMP_H */

@@ -1,0 +1,269 @@
+Abrev. 	quere dizer abreviatura.
+a. C. 	quere dizer antes do Chrísto.
+Açor. 	quere dizer termo açoreano.
+Adj. 	quere dizer adjectivo.
+Adj. f. 	quere dizer adjectivo feminino.
+Adv. 	quere dizer adverbio.
+Afr. 	quere dizer africano.
+Agr. 	quere dizer termo de Agricultura.
+al. 	quere dizer alemão.
+alat. 	quere dizer alatinado.
+alt. al. 	quere dizer alto alemão.
+alter. 	quere dizer alteração.
+Anat. 	quere dizer termo de Anatomia.
+Angl. 	quere dizer Anglicismo.
+angl. sax. 	quere dizer anglo saxão.
+Ant. 	quere dizer termo antigo.
+ant. alt. al. 	quere dizer antigo alto alemão.
+Anthrop. 	quere dizer Anthropologia.
+apher. 	quere dizer aphérese.
+ár. 	quere dizer árabe.
+Arith. 	quere dizer termo de Arithmética.
+art. def. 	quere dizer artigo definido.
+Artilh. 	quere dizer termo de Artilharia.
+as. 	quere dizer termo asiático.
+Arm. 	quere dizer termo de Armaria.
+Astrol. 	quere dizer termo de Astrologia.
+aum. 	quere dizer aumentativo.
+Bacter. 	quere dizer termo de Bacteriologia.
+berb. 	quere dizer berbere.
+Bibl. Nac. 	quere dizer Bibliotheca Nacional.
+Biol. 	quere dizer termo de Biologia.
+b. lat. 	quere dizer baixo latim.
+borg. 	quere dizer borgonhês.
+Bot. 	quere dizer termo de Botânica.
+Bras. 	quere dizer termo brasileiro.
+bret. 	quere dizer bretão.
+Burl. 	quere dizer termo burlesco.
+Caboverd. 	quere dizer termo caboverdeano.
+car. 	quere dizer caraíba.
+Carp. 	quere dizer termo de Carpintaria.
+carth. 	quere dizer carthaginês.
+cast. 	quere dizer castelhano.
+celt. 	quere dizer céltico.
+Cf. 	quere dizer confira.
+chancell. 	quere dizer chancellaria.
+Chapel. 	quere dizer termo de Chapelaria.
+chil. 	quere dizer chileno.
+chin. 	quere dizer chinês.
+Chul. 	quere dizer termo chulo.
+Chron. 	quere dizer termo de Chronologia.
+Cir. 	quere dizer termo de Cirurgia.
+cit. 	quere dizer citado.
+comp. 	quere dizer comparativo.
+conc. 	quere dizer concani.
+cong. 	quere dizer conguês.
+conj. 	quere dizer conjuncção.
+Constr. 	quere dizer termo de construcção.
+contr. 	quere dizer contracção.
+corr. 	quere dizer corruptela.
+Cp. 	quere dizer compare.
+Cutel. 	quere dizer termo de Cutelaria.
+Cyn. 	quere dizer termo de Cynegética.
+def. 	quere dizer defectivo.
+defin. 	quere dizer definido.
+dem. 	quere dizer deminutivo.
+demonstr. 	quere dizer demonstrativo.
+der. 	quere dizer derivado; derivação.
+des. 	quere dizer desusado.
+deprec. 	quere dizer depreciativo.
+diccion. 	quere dizer diccionário; diccionarista,
+din. 	quere dizer dinamarquês.
+doc. 	quere dizer documento.
+eccles. 	quere dizer ecclesiastico.
+Econ. polít. 	quere dizer termo de Economia Política.
+ed. 	quere dizer edição.
+egýp. 	quere dizer egýpcio.
+Enol. 	quere dizer termo de Enologia.
+Entom. 	quere dizer termo de Entomologia.
+Equit. 	quere dizer termo de Equitação.
+escand. 	quere dizer escandinavo.
+escoc. 	quere dizer escocês.
+Escol. 	quere dizer termo escolar.
+Espir. 	quere dizer termo de espiritismo.
+etym. 	quere dizer etymologia.
+ex. 	quere dizer exemplo.
+ext. 	quere dizer em sentido extensivo.
+Extrem. 	quere dizer extremenho.
+euphon. 	quere dizer euphonia; euphónico.
+f. 	quere dizer substantivo feminino.
+f. ou fol. 	quere dizer fôlha.
+fam. 	quere dizer família; termo ou expressão familiar.
+fem. 	quere dizer flexão feminina.
+fig. 	quere dizer em sentido figurado.
+Fin. 	quere dizer termo de Finanças.
+flam. 	quere dizer flamengo.
+flex. 	quere dizer flexão.
+fr. 	quere dizer francês.
+freq. 	quere dizer verbo frequentativo.
+Gal. 	quere dizer gallicismo.
+Gall. 	quere dizer gallego.
+gên. 	quere dizer gênero.
+Geneal. 	quere dizer termo de Genealogia.
+Geod. 	quere dizer termo de Geodesia.
+Geogr. 	quere dizer termo de Geographia.
+Geol. 	quere dizer termo de Geologia.
+Geom. 	quere dizer termo de Geometria.
+germ. 	quere dizer germânico.
+Gír. 	quere dizer termo de gíria.
+Glot. 	quere dizer termo de Glóttica.
+got. 	quere dizer gótico.
+gr. 	quere dizer grego.
+Gram. 	quere dizer termo de Grammática.
+guar. 	quere dizer guarani.
+hebr. 	quere dizer hebreu.
+Heráld. 	quere dizer termo de Heráldica.
+hind. 	quere dizer hindustani.
+Hist. Nat. 	quere dizer termo de Hist. Natural.
+holl. 	quere dizer hollandês.
+hung. 	quere dizer húngaro.
+hybr. 	quere dizer hýbrido.
+Hydrogr. 	quere dizer termo de Hydrographia.
+hyp. 	quere dizer hypothético.
+Icht. 	quere dizer termo de Ichthyologia.
+id. 	quere dizer idem.
+imper. 	quere dizer imperativo.
+impess. 	quere dizer impessoal.
+impropr. 	quere dizer em sentido impróprio.
+inch. 	quere dizer verbo inchoativo.
+ind. 	quere dizer termo indiano.
+inf. 	quere dizer termo infantil.
+infl. 	quere dizer influência.
+ingl. 	quere dizer inglês.
+interj. 	quere dizer interjeição.
+interrog. 	quere dizer interrogação.
+iron. 	quere dizer ironia.
+it. 	quere dizer italiano.
+Ital. 	quere dizer italianismo.
+jap. 	quere dizer japonês.
+jav. 	quere dizer javanês.
+Jur. 	quere dizer termo de Jurisprudência.
+kilogr. 	quere dizer kilogramma.
+lat. 	quere dizer latim.
+lat. barb. 	quere dizer latim bárbaro.
+lat. bot. 	quere dizer latim botânico.
+lisb. 	quere dizer lisboêta.
+Lit. 	quere dizer Literatura.
+loc. 	quere dizer locução.
+loc. adv. 	quere dizer locução adverbial.
+loc. conj. 	quere dizer locução conjunccional.
+loc. prep. 	quere dizer locução prepositiva.
+loc. pron. 	quere dizer locução pronominal.
+lund. 	quere dizer lundês.
+m. 	quere dizer substantivo masculino.
+Mad. 	quere dizer termo da ilha da Madeira.
+mal. 	quere dizer malaio.
+malab. 	quere dizer malabárico.
+Marcen. 	quere dizer termo de Marcenaria.
+Marn. 	quere dizer termo de marnotos.
+Mathem. 	quere dizer termo de Mathemática.
+Med. 	quere dizer termo do Medicina.
+med. lat. 	quere dizer médio latim
+metáth. 	quere dizer metáthese.
+mex. 	quere dizer mexicano.
+Mil. 	quere dizer termo militar.
+Miner. 	quere dizer termo de Mineralogia.
+mod. 	quere dizer moderno.
+ms. 	quere dizer manuscrito.
+Mús. 	quere dizer termo de Música.
+myth. 	quere dizer mythológico.
+n. 	quere dizer nome.
+N. 	quere dizer Norte.
+Náut. 	quere dizer termo de Náutica.
+neerl. 	quere dizer neerlandês.
+neol. 	quere dizer neologismo.
+nord. 	quere dizer nórdico.
+norm. 	quere dizer normando.
+n. p. 	quere dizer nome próprio.
+num. 	quere dizer numeral.
+obsol. 	quere dizer obsoleto.
+onom. 	quere dizer onomatopeia; onomatopaico.
+Ópt. 	quere dizer termo de Óptica.
+or. 	quere dizer origem.
+Ornit. 	quere dizer Ornithologia.
+orthogr. 	quere dizer orthographia.
+p. 	quere dizer página.
+part. 	quere dizer particípio.
+part. irr. 	quere dizer particípio irregular.
+Pathol. 	quere dizer termo de Pathologia.
+pers. 	quere dizer persa.
+peruv. 	quere dizer peruviano.
+Pesc. 	quere dizer termo de Pescaria.
+pess. 	quere dizer pessôa (verbal).
+Pharm. 	quere dizer termo de Pharmacia.
+Philol. 	quere dizer termo de Philologia.
+Phot. 	quere dizer termo de Photographia.
+Phýs. 	quere dizer termo de Phýsica.
+Physiol. 	quere dizer termo de Physiologia.
+Pint. 	quere dizer termo de Pintura.
+pl. 	quere dizer plural.
+pleb. 	quere dizer plebeísmo.
+poet. 	quere dizer termo poético.
+pol. 	quere dizer polaco.
+pop. 	quere dizer termo popular.
+port. 	quere dizer português.
+pov. 	quere dizer povoação.
+pref. 	quere dizer prefixo.
+prep. 	quere dizer preposição.
+pron. 	quere dizer pronome.
+pron. ind. 	quere dizer pronome indefinido.
+prop. 	quere dizer próprio.
+prov. 	quere dizer provincianismo.
+Prov. alent. 	quere dizer provincianismo alentejano.
+Prov. alg. 	quere dizer provincianismo algarvio.
+Prov. beir. 	quere dizer provincianismo beirão.
+Prov. dur. 	quere dizer provincianismo duriense.
+Prov. extr. 	quere dizer provincianismo extremenho.
+Prov. minh. 	quere dizer provincianismo minhoto.
+Prov. trasm. 	quere dizer provincianismo trasmontano.
+provn. 	quere dizer provençal.
+p. us. 	quere dizer pouco usado.
+qual. 	quere dizer qualificativo.
+quimb. 	quere dizer quimbundo.
+rad. 	quere dizer radical.
+refl. 	quere dizer reflexo.
+restrict. 	quere dizer em sentido restricto.
+rev. 	quere dizer revista.
+S. 	quere dizer Sul.
+Sal. 	quere dizer termo de salinas.
+séc. 	quere dizer século.
+seg. 	quere dizer seguinte; seguido.
+sent. 	quere dizer sentido.
+Serr. 	quere dizer termo de Serralharia.
+sign. 	quere dizer significação
+sing. 	quere dizer singular.
+subst. 	quere dizer substantivo.
+suf. 	quere dizer suffixo.
+suf. v. 	quere dizer suffixo verbal.
+sup. 	quere dizer superlativo.
+Supplem. 	quere dizer Supplemento.
+syr. 	quere dizer syríaco.
+t. 	quere dizer termo.
+Taur. 	quere dizer termo da Tauromaquia.
+Terat. 	quere dizer termo de Teratologia.
+Theol. 	quere dizer termo de Theologia.
+thibet. 	quere dizer thibetano.
+Topogr. 	quere dizer termo de Topographia.
+turc. 	quere dizer turco.
+unif. 	quere dizer unifórme.
+us. 	quere dizer usado.
+V. 	quere dizer Veja.
+v. 	quere dizer verbo.
+vasc. 	quere dizer vasconço.
+vb. 	quere dizer verbò.
+veloc. 	quere dizer termo de velocipedia.
+ven. 	quere dizer termo venatório.
+verb. 	quere dizer verbal.
+vers. 	quere dizer versificação.
+Veter. 	quere dizer termo de Veterinária.
+v. g. 	quere dizer verbi-gratia.
+v. i. 	quere dizer verbo intransitivo.
+vin. 	quere dizer termo de vinificação.
+Vit. 	quere dizer termo de Vinicultura.
+vº 	quere dizer versò.
+voc. 	quere dizer vocábulo.
+v. p. ou v. pron. 	quere dizer verbo pronominal.
+vulg. 	quere dizer vulgar.
+v. t. 	quere dizer verbo transitivo.
+zend. 	quere dizer zenda.
+Zool. 	quere dizer termo de Zoologia.

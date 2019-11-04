@@ -68,11 +68,6 @@ template <typename T> bool pilha<T>::vazia() const {
 template <typename T> unsigned int pilha<T>::comprimento() const {
     return this->size();
 }
-
-template <typename T> void pilha<T>::expande(unsigned int N) {
-    this->N = N;
-}
-
 }
 
 #endif	/* PILHA_IMPL_H */

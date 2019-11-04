@@ -13,7 +13,7 @@ template <typename T> class arvore : private BasicTree{
   const T& obtem(const T & algo) const;
 
   // obtém o valor da raiz da árvore
-  const T& obtem() const ;
+  const T& obtem() const;
 
   // enumera os dados in-order, pre-order, post-order e breadth-first
   // In Order
@@ -29,7 +29,7 @@ template <typename T> class arvore : private BasicTree{
   // É bom para desfazer a árvore, pois a raiz é o ultimo dado a ser excluido.
   //
   //Level Order
-  // ordem de nível, de acordo com a distância dos ramos até a raiz 
+  // ordem de nível, de acordo com a distância dos ramos até a raiz
   void listeInOrder(lista<T> & result);
   void listePreOrder(lista<T> & result);
   void listePostOrder(lista<T> & result);

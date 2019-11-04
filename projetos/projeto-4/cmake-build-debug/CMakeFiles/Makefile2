@@ -65,39 +65,39 @@ CMAKE_SOURCE_DIR = /home/layzacs/projetos/PRG29003/projetos/projeto-4
 CMAKE_BINARY_DIR = /home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/dicionario.dir
+# Target rules for target CMakeFiles/Prg2_demo.dir
 
 # All Build rule for target.
-CMakeFiles/dicionario.dir/all:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/depend
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target dicionario"
-.PHONY : CMakeFiles/dicionario.dir/all
+CMakeFiles/Prg2_demo.dir/all:
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/depend
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target Prg2_demo"
+.PHONY : CMakeFiles/Prg2_demo.dir/all
 
 # Include target in all.
-all: CMakeFiles/dicionario.dir/all
+all: CMakeFiles/Prg2_demo.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/dicionario.dir/rule: cmake_check_build_system
+CMakeFiles/Prg2_demo.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dicionario.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Prg2_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/layzacs/projetos/PRG29003/projetos/projeto-4/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/dicionario.dir/rule
+.PHONY : CMakeFiles/Prg2_demo.dir/rule
 
 # Convenience name for target.
-dicionario: CMakeFiles/dicionario.dir/rule
+Prg2_demo: CMakeFiles/Prg2_demo.dir/rule
 
-.PHONY : dicionario
-
-# clean rule for target.
-CMakeFiles/dicionario.dir/clean:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/clean
-.PHONY : CMakeFiles/dicionario.dir/clean
+.PHONY : Prg2_demo
 
 # clean rule for target.
-clean: CMakeFiles/dicionario.dir/clean
+CMakeFiles/Prg2_demo.dir/clean:
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/clean
+.PHONY : CMakeFiles/Prg2_demo.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Prg2_demo.dir/clean
 
 .PHONY : clean
 

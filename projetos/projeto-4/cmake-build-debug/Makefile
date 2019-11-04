@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named dicionario
+# Target rules for targets named Prg2_demo
 
 # Build rule for target.
-dicionario: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dicionario
-.PHONY : dicionario
+Prg2_demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Prg2_demo
+.PHONY : Prg2_demo
 
 # fast build rule for target.
-dicionario/fast:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/build
-.PHONY : dicionario/fast
+Prg2_demo/fast:
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/build
+.PHONY : Prg2_demo/fast
+
+dicionario.o: dicionario.cpp.o
+
+.PHONY : dicionario.o
+
+# target to build an object file
+dicionario.cpp.o:
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/dicionario.cpp.o
+.PHONY : dicionario.cpp.o
+
+dicionario.i: dicionario.cpp.i
+
+.PHONY : dicionario.i
+
+# target to preprocess a source file
+dicionario.cpp.i:
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/dicionario.cpp.i
+.PHONY : dicionario.cpp.i
+
+dicionario.s: dicionario.cpp.s
+
+.PHONY : dicionario.s
+
+# target to generate assembly for a file
+dicionario.cpp.s:
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/dicionario.cpp.s
+.PHONY : dicionario.cpp.s
 
 main.o: main.cpp.o
 
@@ -129,7 +156,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +165,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,35 +174,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/Prg2_demo.dir/build.make CMakeFiles/Prg2_demo.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-verbete.o: verbete.cpp.o
-
-.PHONY : verbete.o
-
-# target to build an object file
-verbete.cpp.o:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/verbete.cpp.o
-.PHONY : verbete.cpp.o
-
-verbete.i: verbete.cpp.i
-
-.PHONY : verbete.i
-
-# target to preprocess a source file
-verbete.cpp.i:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/verbete.cpp.i
-.PHONY : verbete.cpp.i
-
-verbete.s: verbete.cpp.s
-
-.PHONY : verbete.s
-
-# target to generate assembly for a file
-verbete.cpp.s:
-	$(MAKE) -f CMakeFiles/dicionario.dir/build.make CMakeFiles/dicionario.dir/verbete.cpp.s
-.PHONY : verbete.cpp.s
 
 # Help Target
 help:
@@ -184,14 +184,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... dicionario"
+	@echo "... Prg2_demo"
 	@echo "... edit_cache"
+	@echo "... dicionario.o"
+	@echo "... dicionario.i"
+	@echo "... dicionario.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... verbete.o"
-	@echo "... verbete.i"
-	@echo "... verbete.s"
 .PHONY : help
 
 

@@ -81,6 +81,27 @@ template <typename T> const T& arvore<T>::obtem(const T & algo) const {
     throw -1; // dado n encontrado
 }
 
+template <typename T> const T& arvore<T>::obtemMenor() const {
+    const arvore<T> * atual = this;   // aqui temos q chamar como const pq a função é const, significando que ela não modifica em momento nenhum a árvore.
+    while (atual->esq != nullptr) {
+        atual = atual->esq;
+    }
+
+    return atual->data;
+
+}
+
+template <typename T> const T& arvore<T>::obtemMaior() const {
+    const arvore<T> * atual = this;   // aqui temos q chamar como const pq a função é const, significando que ela não modifica em momento nenhum a árvore.
+    while (atual->dir != nullptr) {
+        atual = atual->dir;
+    }
+
+    return atual->data;
+
+}
+
+
 template <typename T> const T& arvore<T>::obtem() const {
     return data;
 }
@@ -104,6 +125,19 @@ template <typename T> int arvore<T>::fatorB()  {
 }
 
 template <typename T> unsigned int arvore<T>::altura()  {
+    unsigned int altdir=0, altesq = 0;
+    // altura da arvore feita de forma recursiva
+    if (esq != nullptr) {
+        altesq = 1 + esq->altura();
+    }
+
+    if (dir != nullptr) {
+        altdir = 1 + dir->altura();
+    }
+
+    if (altesq > altdir) return altesq;
+    return altdir;
+
 }
 
 template <typename T> arvore<T>* arvore<T>::balanceia() {
@@ -119,12 +153,6 @@ template <typename T> T& arvore<T>::proximo() {
 }
 
 template <typename T> bool arvore<T>::fim() {
-}
-
-template <typename T> T& arvore<T>::obtemMenor() const{
-}
-
-template <typename T> T& arvore<T>::obtemMaior() const{
 }
 
 template <typename T> void arvore<T>::obtemMenoresQue(lista<T> & result, const T & algo) {

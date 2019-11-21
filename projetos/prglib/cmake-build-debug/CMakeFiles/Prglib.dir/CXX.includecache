@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-.././libs/arvore-impl.h
+../libs/arvore-impl.h
 
-.././libs/arvore.h
+../libs/arvore.h
 istream
 -
 string
@@ -16,15 +16,15 @@ string
 libs/arvore-impl.h
 -
 
-.././libs/fila-impl.h
+../libs/fila-impl.h
 
-.././libs/fila.h
+../libs/fila.h
 libs/fila-impl.h
 -
 
-.././libs/hash-impl.h
+../libs/hash-impl.h
 
-.././libs/hash.h
+../libs/hash.h
 unordered_map
 -
 string
@@ -36,9 +36,9 @@ memory
 libs/hash-impl.h
 -
 
-.././libs/lista-impl.h
+../libs/lista-impl.h
 
-.././libs/lista.h
+../libs/lista.h
 cstddef
 -
 ostream
@@ -56,17 +56,17 @@ memory
 libs/lista-impl.h
 -
 
-.././libs/pilha-impl.h
+../libs/pilha-impl.h
 pilha.h
-.././libs/pilha.h
+../libs/pilha.h
 
-.././libs/pilha.h
+../libs/pilha.h
 cstdlib
 -
 libs/pilha-impl.h
 -
 
-.././prglib.h
+../prglib.h
 libs/lista.h
 -
 libs/fila.h
@@ -80,6 +80,8 @@ libs/arvore.h
 
 /home/layzacs/projetos/PRG29003/projetos/prglib/main.cpp
 iostream
+-
+string
 -
 prglib.h
 -

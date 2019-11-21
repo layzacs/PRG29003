@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Prglib.dir/main.cpp.o"
-  "Prglib.pdb"
   "Prglib"
+  "Prglib.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,6 +1,8 @@
 #ifndef FILA_H
 #define	FILA_H
 
+#include <libs/fila-impl.h>
+
 namespace prglib {
 
 // Especificando que a classe pode ser de qualquer tipo de dados T, um tipo genérico
@@ -60,6 +62,5 @@ private:
 
 }
 
-#include <libs/fila-impl.h>
 
 #endif	/* FILA_H */

@@ -1,32 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-#include<iostream>
+#include <iostream>
+#include <string>
 #include <prglib.h>
- 
+
 using namespace std;
-using prglib::fila;
- 
+using prglib::arvore;
+
 int main() {
-  fila<int> f1(10); // cria uma fila chamada "f1", com capacidade 10
+    string w[7] = {"graviola","caju","sapoti","acai", "banana","morango","laranja"};
 
-  // fila<int> f2(2);
- 
-  // enfileira os números 5, 8, 2 e 4 na fila "f1"
-  f1.enfileira(5);
-  f1.enfileira(8);
-  f1.enfileira(2);
-  f1.enfileira(4);
+    // Uma árvore deve ser criada dinamicamente ... isso facilita
+    // sua implementação.
+    arvore<string> * arv = new arvore<string>(w[0]);
 
-  // testando o operador de igualdade
-  // f2 = f1
+    for (int n=1; n < 6; n++) arv->adiciona(w[n]);
 
-  // desenfileira um por um dos dados da fila, mostrando-os na tela, até
-  // que a fila fique vazia
-  while (! f1.vazia()) cout << "Dado: " << f1.desenfileira() << endl;
- 
-  return 0;
+    for (int n=0; n < 7; n++) {
+        try {
+            cout << "arv[" << w[n] << "] = " << arv->obtem(w[n]) << endl;
+        } catch (...) {
+            cout << "Ops: " << w[n] << " não está na árvore !" << endl;
+        }
+    }
+
+    delete arv;
+
+    return 0;
 }

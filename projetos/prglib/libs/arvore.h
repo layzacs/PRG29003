@@ -22,13 +22,14 @@ template <typename T> class arvore {
   arvore();
 
   // cria um nodo da árvore, o qual contém o dado passado no parâmetro "dado"
-  arvore(const T & dado);
+  explicit arvore(const T & dado);
 
   // cria uma árvore cujos nodos contêm os dados contidos na lista "dados"
-  arvore(lista<T> & dados);
+  // ele não embaralha lista.
+  explicit arvore(lista<T> & dados);
 
   // cria uma árvore cujos nodos contêm os dados contidos na stream "inp" (que pode ser um arquivo)
-  arvore(istream & inp);
+  explicit arvore(istream & inp);
 
   // cria uma árvore que é uma cópia de "outra"
   arvore(const arvore<T> & outra);
@@ -103,6 +104,7 @@ template <typename T> class arvore {
 
   // obtém todos valores entre "start" e "end" (inclusive)
   void obtemIntervalo(lista<T> & result, const T & start, const T & end);
+
  protected:
      T data;
      arvore<T> * esq, * dir, * pai;

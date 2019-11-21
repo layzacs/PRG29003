@@ -3,7 +3,6 @@
  * Author: msobral
  *
  * Created on 11 de Agosto de 2016, 13:59
- */
 
 #ifndef FILA_IMP_H
 #define	FILA_IMP_H

@@ -1,8 +1,5 @@
-/* 
- * File:   lista.h
- * Author: msobral
- *
- * Created on 11 de Agosto de 2016, 08:56
+/*
+ * Lista Duplamente encadeada com guarda
  */
 
 #ifndef LISTA2_H
@@ -38,9 +35,12 @@ template <typename T> class lista {
  
   // adiciona "algo" no final da lista
   void anexa(const T & algo);
+
+  void anexatodos(const lista &outra);
  
   // insere "algo" em uma posição específica da lista  
   void insere(const T & algo, int posicao);
+
   void insereOrdenado(const T & algo);
  
   // remove o dado que está na "posicao" na lista, e retorna 
@@ -111,21 +111,45 @@ template <typename T> class lista {
   struct Nodo {
     Nodo * proximo, * anterior;
     T dado;
+
+    Nodo() {
+        proximo = this;
+        anterior = this;
+    }
  
     // construtor do Nodo: prático para uso nos métodos
     // da lista
     Nodo(const T & algo) {
       dado = algo;
-      proximo = nullptr;
-      anterior = nullptr;
+      proximo = this;
+      anterior = this;
     }
+
+    void conecta(Nodo * succ) {
+        proximo = succ;
+
+        anterior = succ->anterior;
+
+        succ->anterior = this;
+
+        anterior->proximo = this;
+    }
+
+    void desconecta() {
+        anterior->proximo = proximo;
+        proximo->anterior = anterior;
+        anterior = proximo = this;
+    }
+
   };
  
-  // ponteiros para primeiro e último nodos
-  Nodo * primeiro, * ultimo;
+  // Como modificamos, não precisamos mais dos nodos primeiro e ultimo. Agora usaremos só o guarda
+  Nodo guarda;
  
-  // ponteiro para nodo atual da iteração
+  // ponteiro para nodo atual da iteração, diz em qual nodo a iteração está em um dado momento
   Nodo * atual;
+
+  Nodo * obtem_nodo(int posicao);
  
   // comprimento da lista
   long len;

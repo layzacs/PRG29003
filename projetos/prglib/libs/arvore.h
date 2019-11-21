@@ -43,8 +43,14 @@ template <typename T> class arvore {
   // acessa um dado contido na árvore. OBS o dado acessado não pode ser modificado !
   const T& obtem(const T & algo) const;
 
+  // obtem menor dado da arvore
+  const T& obtemMenor() const;
+
+  //obtem maior dado da arvore
+  const T& obtemMaior() const;
+
   // obtém o valor da raiz da árvore. OBS esse valor não pode ser modificado !
-  const T& obtem() const ;
+  const T& obtem() const;
 
   // operações de enumeração dos dados da árvore
   void listeInOrder(lista<T> & result);
@@ -89,12 +95,6 @@ template <typename T> class arvore {
 
   // remove um dado da árvore. Retorna uma cópia do dado removido
   T remove(const T & algo);
-
-  // obtém o menor dado contido na árvore. OBS esse dado não pode ser modificado
-  T & obtemMenor() const;
-
-  // obtém o maior dado contido na árvore. OBS esse dado não pode ser modificado
-  T & obtemMaior() const;
 
   // obtém os dados menores que "algo"
   void obtemMenoresQue(lista<T> & result, const T & algo);

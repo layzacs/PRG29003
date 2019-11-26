@@ -108,7 +108,11 @@ template <typename T> class arvore {
  protected:
      T data;
      arvore<T> * esq, * dir, * pai;
-     
+
+    // um ponteiro para pilha a ser usada pelo iterador.
+    // OBS: pode-se usar uma lista como se fosse pilha !
+    lista<arvore<T>*> * p_stack;
+
     arvore<T> * rotacionaL();     
     arvore<T> * rotacionaR();     
 };

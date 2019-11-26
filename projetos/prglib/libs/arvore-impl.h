@@ -107,15 +107,83 @@ template <typename T> const T& arvore<T>::obtem() const {
 }
 
 template <typename T> void arvore<T>::listeEmLargura(lista<T> & result) {
+    lista<arvore<T>*> nodos;
+
+    nodos.anexa(this);
+
+    while (!nodos.vazia()) {
+        auto node = nodos.remove(0);
+        result.anexa(node->data);
+
+        if (node->esq != nullptr) {
+            nodos.anexa(node->esq);
+        }
+        if (node->dir != nullptr) {
+            nodos.anexa(node->dir);
+        }
+    }
 }
 
 template <typename T> void arvore<T>::listeInOrder(lista<T> & result) {
+    // lista em ordem a arvore feita de forma recursiva
+    if (esq != nullptr) {
+        esq->listeInOrder(result);
+    }
+
+    result.anexa(data);
+
+    if (dir != nullptr) {
+        dir->listeInOrder(result);
+    }
+
 }
 
 template <typename T> void arvore<T>::listePreOrder(lista<T> & result) {
+
+    // não recursivo
+    lista<arvore<T>*> nodos;
+
+    nodos.anexa(this);
+
+    while (!nodos.vazia()) {
+        auto node = nodos.remove(0);
+        result.anexa(node->data);
+
+        if (node->dir != nullptr) {
+            nodos.insere(node->dir);
+        }
+
+        if (node->esq != nullptr) {
+            nodos.insere(node->esq);
+        }
+
+    }
+
+    /*/ recursivo
+    result.anexa(data);
+
+    if (esq != nullptr) {
+        esq->listePreOrder(result);
+    }
+
+    if (dir != nullptr) {
+        dir->listePreOrder(result);
+    }
+*/
+
 }
 
 template <typename T> void arvore<T>::listePostOrder(lista<T> & result) {
+
+    if (esq != nullptr) {
+        esq->listePostOrder(result);
+    }
+
+    if (dir != nullptr) {
+        dir->listePostOrder(result);
+    }
+
+    result.anexa(data);
 }
 
 template <typename T> unsigned int arvore<T>::tamanho() const {
@@ -147,12 +215,36 @@ template <typename T> arvore<T>* arvore<T>::balanceia(bool otimo) {
 }
 
 template <typename T> void arvore<T>::inicia() {
+    if (p_stack == nullptr) p_stack = new lista<arvore<T>*>;
+    else p_stack->esvazia();
+
+    // versão inicial: pre order
+    p_stack->insere(this);
+
+
 }
 
 template <typename T> T& arvore<T>::proximo() {
+    if (fim()) throw -1;
+
+    auto node = p_stack->remove(0);
+
+    if (node->dir != nullptr) {
+        p_stack->insere(node->dir);
+    }
+
+    if (node->esq != nullptr) {
+        p_stack->insere(node->esq);
+    }
+
+    return node->data;
+
+
+
 }
 
 template <typename T> bool arvore<T>::fim() {
+    return p_stack->vazia();
 }
 
 template <typename T> void arvore<T>::obtemMenoresQue(lista<T> & result, const T & algo) {

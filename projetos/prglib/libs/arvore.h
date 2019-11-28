@@ -102,10 +102,15 @@ template <typename T> class arvore {
   // obtém os dados maiores que "algo"
   void obtemMaioresQue(lista<T> & result, const T & algo);
 
+    const T& obtem_sucessor(const T & algo);
+
   // obtém todos valores entre "start" e "end" (inclusive)
   void obtemIntervalo(lista<T> & result, const T & start, const T & end);
 
- protected:
+    arvore<T> * rotacionaL();
+    arvore<T> * rotacionaR();
+
+protected:
      T data;
      arvore<T> * esq, * dir, * pai;
 
@@ -113,8 +118,7 @@ template <typename T> class arvore {
     // OBS: pode-se usar uma lista como se fosse pilha !
     lista<arvore<T>*> * p_stack;
 
-    arvore<T> * rotacionaL();     
-    arvore<T> * rotacionaR();     
+
 };
 
 } // fim do namespace

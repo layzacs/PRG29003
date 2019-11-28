@@ -81,6 +81,38 @@ template <typename T> const T& arvore<T>::obtem(const T & algo) const {
     throw -1; // dado n encontrado
 }
 
+    // copie aquui a sua implementação da árvore
+
+    template <typename T> const T& arvore<T>::obtem_sucessor(const T & algo) const {
+
+        const arvore<T> * atual = this;
+
+        if (atual == algo && dir == nullptr) {
+            throw -1
+        }
+
+        if (atual == algo && atual->dir != nullptr) {
+            return atual->dir;
+        }
+
+        if (atual < algo) {
+            atual = atual->dir;
+            atual->obtem_sucessor(algo);
+
+        }
+
+        if (atual > algo) {
+            atual = atual->esq;
+            atual->obtem_sucessor(algo);
+        }
+
+        //  return succ;
+
+
+    }
+
+
+
 template <typename T> const T& arvore<T>::obtemMenor() const {
     const arvore<T> * atual = this;   // aqui temos q chamar como const pq a função é const, significando que ela não modifica em momento nenhum a árvore.
     while (atual->esq != nullptr) {
@@ -190,6 +222,19 @@ template <typename T> unsigned int arvore<T>::tamanho() const {
 }
 
 template <typename T> int arvore<T>::fatorB()  {
+    int altdir=0, altesq = 0;
+    //
+    if (esq != nullptr) {
+        altesq = 1 + esq->altura();
+    }
+
+    if (dir != nullptr) {
+        altdir = 1 + dir->altura();
+    }
+
+    return (altesq - altdir);
+
+
 }
 
 template <typename T> unsigned int arvore<T>::altura()  {
@@ -208,7 +253,39 @@ template <typename T> unsigned int arvore<T>::altura()  {
 
 }
 
+template <typename T> arvore<T> * arvore<T>::rotacionaL() {
+    arvore<T> * n1 = this;
+    arvore<T> * n2 = dir;
+    arvore<T> * b = n2->esq; // subarvore da direita
+
+    n2->esq = n1;
+    n1->dir = b;
+
+    return n2;
+
+}
+
+template <typename T> arvore<T> * arvore<T>::rotacionaR() {
+    arvore<T> * n1 = this;
+    arvore<T> * n2 = dir;
+    arvore<T> * b = n2->esq; // subarvore da direita
+
+    n2->dir = n1;
+    n1->esq = b;
+
+    return n2;
+
+}
+
+
 template <typename T> arvore<T>* arvore<T>::balanceia() {
+    if (esq != nullptr) {
+        esq = balanceia(esq);
+    }
+    if (esq != nullptr) {
+        esq = balanceia(esq);
+    }
+
 }
 
 template <typename T> arvore<T>* arvore<T>::balanceia(bool otimo) {

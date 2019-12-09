@@ -9,10 +9,13 @@
 #define	ARVORE_H
 
 #include <istream>
+#include <ostream>
+
 #include <string>
 
 using std::string;
 using std::istream;
+using std::ostream;
 
 namespace prglib {
     
@@ -37,6 +40,8 @@ template <typename T> class arvore {
   // destrutor da árvore
   ~arvore();
 
+
+
   // adiciona um dado à árvore
   void adiciona(const T& algo);
 
@@ -53,9 +58,13 @@ template <typename T> class arvore {
   const T& obtem() const;
 
   // operações de enumeração dos dados da árvore
+  // visitam-se nodos na sequência esquerda, raiz, direita. O resultado é o acesso ordenado em função das chaves
   void listeInOrder(lista<T> & result);
+  // visitam-se nodos na sequência raiz, esquerda, direita. O resultado é uma ordem de acesso que revela a topologia da árvore
   void listePreOrder(lista<T> & result);
+  // visitam-se nodos na sequência esquerda, direita, raiz. O resultado é uma ordem de acesso das folhas em direção à raiz
   void listePostOrder(lista<T> & result);
+  // visitam-se nodos cada nível por vez, da esquerda pra direita
   void listeEmLargura(lista<T> & result);
 
   // retorna a quantidade de dados contidos na árvore
@@ -102,13 +111,16 @@ template <typename T> class arvore {
   // obtém os dados maiores que "algo"
   void obtemMaioresQue(lista<T> & result, const T & algo);
 
-    const T& obtem_sucessor(const T & algo);
+  //const T& obtem_sucessor(const T & algo);
 
   // obtém todos valores entre "start" e "end" (inclusive)
   void obtemIntervalo(lista<T> & result, const T & start, const T & end);
 
-    arvore<T> * rotacionaL();
-    arvore<T> * rotacionaR();
+  arvore<T> * rotacionaL();
+
+  arvore<T> * rotacionaR();
+
+  void escrevaSe(ostream& out) const;
 
 protected:
      T data;
@@ -118,6 +130,8 @@ protected:
     // OBS: pode-se usar uma lista como se fosse pilha !
     lista<arvore<T>*> * p_stack;
 
+
+    // rotacionas - usados para balanceamento da árvore
 
 };
 

@@ -11,6 +11,8 @@
 ../libs/arvore.h
 istream
 -
+ostream
+-
 string
 -
 libs/arvore-impl.h

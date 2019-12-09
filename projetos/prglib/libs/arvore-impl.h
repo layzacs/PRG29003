@@ -10,29 +10,29 @@
 
 namespace prglib {
 
-template <typename T> arvore<T>::~arvore() {    
-}
+    template <typename T> arvore<T>::~arvore() {
+    }
     
-template <typename T> arvore<T>::arvore() {    
-}
+    template <typename T> arvore<T>::arvore() {
+    }
 
-template <typename T> arvore<T>::arvore(const T & dado) {
-    data = dado;
-    pai = this; // pai aponta para ele mesmo
-    esq = nullptr;
-    dir = nullptr;
-}
+    template <typename T> arvore<T>::arvore(const T & dado) {
+        data = dado;
+        pai = this; // pai aponta para ele mesmo
+        esq = nullptr;
+        dir = nullptr;
+    }
 
-// cria arvore a partir de um arquivo
-template <typename T> arvore<T>::arvore(istream &inp) {
-
-}
-
-template <typename T> arvore<T>::arvore(prglib::lista<T> &dados) {
+    // cria arvore a partir de um arquivo
+    template <typename T> arvore<T>::arvore(istream &inp) {
 
 }
 
-template <typename T> void arvore<T>::adiciona(const T & algo) {
+    template <typename T> arvore<T>::arvore(prglib::lista<T> &dados) {
+
+}
+
+    template <typename T> void arvore<T>::adiciona(const T & algo) {
     arvore<T> * atual = this; // define um nodo apontando para a raiz da arvore
 
     while (true) {
@@ -63,8 +63,8 @@ template <typename T> void arvore<T>::adiciona(const T & algo) {
     }
 }
 
-// obtem retorna o dado
-template <typename T> const T& arvore<T>::obtem(const T & algo) const {
+    // obtem retorna o dado
+    template <typename T> const T& arvore<T>::obtem(const T & algo) const {
     const arvore<T> * atual = this;   // aqui temos q chamar como const pq a função é const, significando que ela não modifica em momento nenhum a árvore.
 
     while (atual != nullptr) {
@@ -81,15 +81,14 @@ template <typename T> const T& arvore<T>::obtem(const T & algo) const {
     throw -1; // dado n encontrado
 }
 
-    // copie aquui a sua implementação da árvore
+/*
+template <typename T> const T& arvore<T>::obtem_sucessor(const T & algo) const {
 
-    template <typename T> const T& arvore<T>::obtem_sucessor(const T & algo) const {
+    const arvore<T> * atual = this;
 
-        const arvore<T> * atual = this;
-
-        if (atual == algo && dir == nullptr) {
-            throw -1
-        }
+    if (atual == algo && dir == nullptr) {
+        throw -1
+    }
 
         if (atual == algo && atual->dir != nullptr) {
             return atual->dir;
@@ -110,10 +109,10 @@ template <typename T> const T& arvore<T>::obtem(const T & algo) const {
 
 
     }
+*/
 
 
-
-template <typename T> const T& arvore<T>::obtemMenor() const {
+    template <typename T> const T& arvore<T>::obtemMenor() const {
     const arvore<T> * atual = this;   // aqui temos q chamar como const pq a função é const, significando que ela não modifica em momento nenhum a árvore.
     while (atual->esq != nullptr) {
         atual = atual->esq;
@@ -123,7 +122,7 @@ template <typename T> const T& arvore<T>::obtemMenor() const {
 
 }
 
-template <typename T> const T& arvore<T>::obtemMaior() const {
+    template <typename T> const T& arvore<T>::obtemMaior() const {
     const arvore<T> * atual = this;   // aqui temos q chamar como const pq a função é const, significando que ela não modifica em momento nenhum a árvore.
     while (atual->dir != nullptr) {
         atual = atual->dir;
@@ -134,11 +133,11 @@ template <typename T> const T& arvore<T>::obtemMaior() const {
 }
 
 
-template <typename T> const T& arvore<T>::obtem() const {
+    template <typename T> const T& arvore<T>::obtem() const {
     return data;
 }
 
-template <typename T> void arvore<T>::listeEmLargura(lista<T> & result) {
+    template <typename T> void arvore<T>::listeEmLargura(lista<T> & result) {
     lista<arvore<T>*> nodos;
 
     nodos.anexa(this);
@@ -156,7 +155,7 @@ template <typename T> void arvore<T>::listeEmLargura(lista<T> & result) {
     }
 }
 
-template <typename T> void arvore<T>::listeInOrder(lista<T> & result) {
+    template <typename T> void arvore<T>::listeInOrder(lista<T> & result) {
     // lista em ordem a arvore feita de forma recursiva
     if (esq != nullptr) {
         esq->listeInOrder(result);
@@ -170,7 +169,7 @@ template <typename T> void arvore<T>::listeInOrder(lista<T> & result) {
 
 }
 
-template <typename T> void arvore<T>::listePreOrder(lista<T> & result) {
+    template <typename T> void arvore<T>::listePreOrder(lista<T> & result) {
 
     // não recursivo
     lista<arvore<T>*> nodos;
@@ -205,7 +204,7 @@ template <typename T> void arvore<T>::listePreOrder(lista<T> & result) {
 
 }
 
-template <typename T> void arvore<T>::listePostOrder(lista<T> & result) {
+    template <typename T> void arvore<T>::listePostOrder(lista<T> & result) {
 
     if (esq != nullptr) {
         esq->listePostOrder(result);
@@ -218,10 +217,10 @@ template <typename T> void arvore<T>::listePostOrder(lista<T> & result) {
     result.anexa(data);
 }
 
-template <typename T> unsigned int arvore<T>::tamanho() const {
-}
+    template <typename T> unsigned int arvore<T>::tamanho() const {
+    }
 
-template <typename T> int arvore<T>::fatorB()  {
+    template <typename T> int arvore<T>::fatorB()  {
     int altdir=0, altesq = 0;
     //
     if (esq != nullptr) {
@@ -234,10 +233,9 @@ template <typename T> int arvore<T>::fatorB()  {
 
     return (altesq - altdir);
 
-
 }
 
-template <typename T> unsigned int arvore<T>::altura()  {
+    template <typename T> unsigned int arvore<T>::altura()  {
     unsigned int altdir=0, altesq = 0;
     // altura da arvore feita de forma recursiva
     if (esq != nullptr) {
@@ -253,10 +251,10 @@ template <typename T> unsigned int arvore<T>::altura()  {
 
 }
 
-template <typename T> arvore<T> * arvore<T>::rotacionaL() {
+    template <typename T> arvore<T> * arvore<T>::rotacionaL() {
     arvore<T> * n1 = this;
     arvore<T> * n2 = dir;
-    arvore<T> * b = n2->esq; // subarvore da direita
+    arvore<T> * b = n2->esq; // subarvore da esquerda do n2
 
     n2->esq = n1;
     n1->dir = b;
@@ -265,10 +263,10 @@ template <typename T> arvore<T> * arvore<T>::rotacionaL() {
 
 }
 
-template <typename T> arvore<T> * arvore<T>::rotacionaR() {
+    template <typename T> arvore<T> * arvore<T>::rotacionaR() {
     arvore<T> * n1 = this;
-    arvore<T> * n2 = dir;
-    arvore<T> * b = n2->esq; // subarvore da direita
+    arvore<T> * n2 = esq;
+    arvore<T> * b = n2->dir; // subarvore da direita
 
     n2->dir = n1;
     n1->esq = b;
@@ -278,30 +276,51 @@ template <typename T> arvore<T> * arvore<T>::rotacionaR() {
 }
 
 
-template <typename T> arvore<T>* arvore<T>::balanceia() {
+    template <typename T> arvore<T>* arvore<T>::balanceia() {
+
     if (esq != nullptr) {
-        esq = balanceia(esq);
-    }
-    if (esq != nullptr) {
-        esq = balanceia(esq);
+        esq = esq->balanceia();
     }
 
+    if (dir != nullptr) {
+        dir = dir->balanceia();
+    }
+
+    auto raiz = this;
+
+    while (raiz->fatorB() < -1) {
+
+        if (raiz->dir->fatorB() > 0) {
+            raiz->dir = raiz->dir->rotacionaR();
+        }
+        raiz = raiz->rotacionaL();
+    }
+
+
+
+    while (raiz->fatorB() > 1) {
+
+        if (raiz->esq->fatorB() < 0) {
+            raiz->esq = raiz->esq->rotacionaL();
+        }
+        raiz = raiz->rotacionaR();
+    }
+
+    return raiz;
 }
 
-template <typename T> arvore<T>* arvore<T>::balanceia(bool otimo) {
-}
+    template <typename T> arvore<T>* arvore<T>::balanceia(bool otimo) {
+    }
 
-template <typename T> void arvore<T>::inicia() {
+    template <typename T> void arvore<T>::inicia() {
     if (p_stack == nullptr) p_stack = new lista<arvore<T>*>;
     else p_stack->esvazia();
 
     // versão inicial: pre order
     p_stack->insere(this);
-
-
 }
 
-template <typename T> T& arvore<T>::proximo() {
+    template <typename T> T& arvore<T>::proximo() {
     if (fim()) throw -1;
 
     auto node = p_stack->remove(0);
@@ -315,22 +334,45 @@ template <typename T> T& arvore<T>::proximo() {
     }
 
     return node->data;
-
-
-
 }
 
-template <typename T> bool arvore<T>::fim() {
+    template <typename T> bool arvore<T>::fim() {
     return p_stack->vazia();
 }
 
-template <typename T> void arvore<T>::obtemMenoresQue(lista<T> & result, const T & algo) {
+    template <typename T> void arvore<T>::obtemMenoresQue(lista<T> & result, const T & algo) {
 }
 
-template <typename T> void arvore<T>::obtemMaioresQue(lista<T> & result, const T & algo) {
+    template <typename T> void arvore<T>::obtemMaioresQue(lista<T> & result, const T & algo) {
+    }
+
+    template <typename T> void arvore<T>::obtemIntervalo(lista<T>& result, const T& start, const T& end) {
+    // pega todos os parametros entre star e end, INCLUSIVE o start e o end.
+
+    auto raiz = this;
+
+    if (raiz < start) {
+        dir->obtemIntervalo(result, start, end);
+    }
+
+    if (raiz > start) {
+        esq->obtemIntervalo(result, start, end);
+    }
 }
 
-template <typename T> void arvore<T>::obtemIntervalo(lista<T>& result, const T& start, const T& end) {
+    // mostra formato atual da arvore
+    // by msobral
+    template <typename T> void arvore<T>::escrevaSe(ostream& out) const {
+    static int nivel = -1;
+    string prefixo;
+
+    nivel++;
+    prefixo.append(nivel, ' ');
+
+    if (dir) dir->escrevaSe(out);
+    out << prefixo << data << std::endl;
+    if (esq) esq->escrevaSe(out);
+    nivel--;
 }
 
 };

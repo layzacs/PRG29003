@@ -1,90 +1,101 @@
- /*
- * File:   fila-imp.h
- * Author: msobral
- *
- * Created on 11 de Agosto de 2016, 13:59
-*/
 #ifndef FILA_IMP_H
 #define	FILA_IMP_H
 
-#include "fila.h"
-
 namespace prglib {
 
-template <typename T> fila<T>::fila(unsigned int max_itens) {
-  if (max_itens == 0) throw -1;
-  cap = max_itens;
-  N = 0;
-  inicio = 0;
-  fim = 0;
+    template <typename T> fila<T>::fila(unsigned int max_itens) {
+        // não permite criar uma lista com capacidade de 0 dados
+        if (max_itens == 0) throw -1;
 
-  // o new cria uma área de memória para guardar valores da variável dada.
-  buffer = new int[cap];
-}
+        // todos os valores relacionados a fila são inicializados
+        cap = max_itens;
+        N = 0;
+        inicio = 0;
+        fim = 0;
+        // o new cria uma área de memória para guardar valores da variável passada. O vetor de tamanho especificado é criado abaixo.
+        buffer = new int[cap];
+    }
 
-template <typename T> fila<T>::fila(const fila& orig) {
-}
+    // TODO - Copia da fila
+    template <typename T> fila<T>::fila(const fila& orig) {
+        /*
+        N = orig.N;
+        cap = orig.cap;
+        buffer = orig.buffer;
+        inicio = orig.inicio;
+        fim = orig.fim;
+        */
+    }
 
-template <typename T> fila<T>::~fila() {
-    // liberar a áera de memoria alocada pelo buffer.
-    // Como é vetor, precisa dos colchetes.
-    delete[] buffer;
-}
+    template <typename T> fila<T>::~fila() {
+        // liberar a áera de memoria alocada pelo buffer.
+        // Como é vetor, precisa dos colchetes.
+        delete[] buffer;
+    }
 
-template <typename T> fila<T>& fila<T>::operator=(const fila& outra) {
-    // exemplo: N = outra.N;
-}
+    // TODO - Operador = da fila;
+    template <typename T> fila<T>& fila<T>::operator=(const fila& outra) {
 
-template <typename T> void fila<T>::enfileira(const T& algo) {
+        /*
+        N = outra.N;
+        cap = outra.cap;
+        buffer = outra.buffer;
+        inicio = outra.inicio;
+        fim = outra.fim;
+        */
+    }
 
-    if (cheia()) throw -1;
-    // guarda algo no fim da fila
-    buffer[fim] = algo;
-    // faz o incremento circular
-    fim++;
+    template <typename T> void fila<T>::enfileira(const T& algo) {
+        // se fila cheia, dispara exceção.
+        if (cheia()) throw -1;
+        // adicionamos o novo dado na primeira posição livre, apontada pela variavel fim.
+        buffer[fim] = algo;
 
-    if (fim == cap) fim = 0;
+        // se ao somar um a variavel fim chegarmos no valor máximo da fila, fim se torna igual a 0.
+        if (fim+1 == cap) {
+            fim = 0;
+        } else {
+            fim++;
+        }
+        N++;
 
-    N++;
+    }
 
-    //return buffer[fim];
+    template <typename T> T fila<T>::desenfileira() {
+        // se fila vazia ger exceção.
+        if (vazia()) throw -1;
 
-}
+        // o valor a ser desenfileirado é o que se encontra no inicio da fila (first in first out)
+        int desenfileirado = inicio;
+        // o inicio da fila passa a ser o valor seguinte.
+        inicio++;
+        // se o inicio estiver na ultima posição do vetor, ele passar a apontar para a posição 0 (fila circular).
+        if (inicio == cap) inicio = 0;
+        // dado desenfileirado diminui a quantidade de dados da fila em 1.
+        N--;
+        // retornamos valor desenfileirado
+        return buffer[desenfileirado];
+    }
 
-template <typename T> T fila<T>::desenfileira() {
+    template <typename T> T & fila<T>::frente() {
+        return inicio;
+    }
 
-    if (vazia()) throw -1;
+    template <typename T> bool fila<T>::vazia() const {
+        return N == 0;
+    }
 
-    int anterior = inicio;
-    inicio ++;
-    if (inicio == cap) inicio = 0;
+    template <typename T> bool fila<T>::cheia() const {
+        return N == cap;
+    }
 
-    N--;
+    template <typename T> unsigned int fila<T>::capacidade() const {
+        return cap;
+    }
 
-    return buffer[anterior];
-}
-
-template <typename T> T & fila<T>::frente() {
-    if (vazia()) throw -1;
-
-    return buffer[inicio];
-}
-
-template <typename T> bool fila<T>::vazia() const {
-  return N == 0;
-}
-
-template <typename T> bool fila<T>::cheia() const {
-    return N == cap;
-}
-
-template <typename T> unsigned int fila<T>::capacidade() const {
-    return cap;
-}
-
-template <typename T> unsigned int fila<T>::comprimento() const {
-    return N;
-}
+    template <typename T> unsigned int fila<T>::comprimento() const {
+        return N;
+    }
 
 } // fim namespace
 

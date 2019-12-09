@@ -1,54 +1,25 @@
-#include <iostream>
-#include <string>
+#include<iostream>
 #include <prglib.h>
 
 using namespace std;
-using prglib::arvore;
-using prglib::lista;
+using prglib::fila;
+
 int main() {
-
-    // Uma árvore deve ser criada dinamicamente ... isso facilita
-    // sua implementação.
-    arvore<int> * arv = new arvore<int>(1);
+    fila<int> f1(10); // cria uma fila chamada "f1", com capacidade 10
 
 
-    arv->adiciona(2);
-    arv->adiciona(3);
-    arv->adiciona(4);
+    // enfileira os números 5, 8, 2 e 4 na fila "f1"
+    f1.enfileira(5);
+    f1.enfileira(8);
+    f1.enfileira(2);
+    f1.enfileira(4);
 
-    arv->adiciona(5);
+    while (!f1.vazia()) {
+        cout << f1.desenfileira() << endl;
+    }
+    
 
-    arv->adiciona(6);
-
-    arv->adiciona(7);
-
-    arv->escrevaSe(cout);
-    cout << "raiz = " << arv->obtem() << endl;
-    cout << "fatorb = " << arv->fatorB() << endl;
-
-    cout << "primeiro balanceamento" << endl;
-
-    arv = arv->balanceia();
-
-    cout << "raiz = " << arv->obtem() << endl;
-    cout << "fatorb = " << arv->fatorB() << endl;
-
-    arv->escrevaSe(cout);
-
-    cout << "segundo balanceamento" << endl;
-
-    cout << "raiz = " << arv->obtem() << endl;
-
-    cout << "fatorb = " << arv->fatorB() << endl;
-
-    arv = arv->balanceia();
-
-    cout << "fatorb = " << arv->fatorB() << endl;
-    cout << "raiz = " << arv->obtem() << endl;
-
-    arv->escrevaSe(cout);
-
-    delete arv;
-
+    // desenfileira um por um dos dados da fila, mostrando-os na tela, até
+    // que a fila fique vazia
     return 0;
 }

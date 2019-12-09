@@ -9,7 +9,6 @@ CMakeFiles/Prglib.dir/main.cpp.o: ../libs/hash-impl.h
 CMakeFiles/Prglib.dir/main.cpp.o: ../libs/hash.h
 CMakeFiles/Prglib.dir/main.cpp.o: ../libs/lista-impl.h
 CMakeFiles/Prglib.dir/main.cpp.o: ../libs/lista.h
-CMakeFiles/Prglib.dir/main.cpp.o: ../libs/pilha-impl.h
 CMakeFiles/Prglib.dir/main.cpp.o: ../libs/pilha.h
 CMakeFiles/Prglib.dir/main.cpp.o: ../prglib.h
 CMakeFiles/Prglib.dir/main.cpp.o: ../main.cpp

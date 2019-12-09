@@ -14,10 +14,15 @@ int main() {
     f1.enfileira(2);
     f1.enfileira(4);
 
+    fila<int> f2(f1);
+
     while (!f1.vazia()) {
         cout << f1.desenfileira() << endl;
     }
-    
+
+    while (!f2.vazia()) {
+        cout << f2.desenfileira() << endl;
+    }
 
     // desenfileira um por um dos dados da fila, mostrando-os na tela, até
     // que a fila fique vazia

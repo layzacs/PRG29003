@@ -58,15 +58,7 @@ memory
 libs/lista-impl.h
 -
 
-../libs/pilha-impl.h
-pilha.h
 ../libs/pilha.h
-
-../libs/pilha.h
-cstdlib
--
-libs/pilha-impl.h
--
 
 ../prglib.h
 libs/lista.h

@@ -16,15 +16,19 @@ namespace prglib {
         buffer = new int[cap];
     }
 
-    // TODO - Copia da fila
     template <typename T> fila<T>::fila(const fila& orig) {
-        /*
+
+        //copiamos os atributos da fila original para a nova fila
         N = orig.N;
         cap = orig.cap;
-        buffer = orig.buffer;
         inicio = orig.inicio;
         fim = orig.fim;
-        */
+        // o buffer não pode ser copiado como os outros parâmetros. Ele é deletado e criamos um novo, copiando da lista anterior seus valores.
+        buffer = new T[cap];
+        for (int i = 0; i < N; i++) {
+            buffer[i] = orig.buffer[i];
+        }
+
     }
 
     template <typename T> fila<T>::~fila() {
@@ -33,16 +37,21 @@ namespace prglib {
         delete[] buffer;
     }
 
-    // TODO - Operador = da fila;
     template <typename T> fila<T>& fila<T>::operator=(const fila& outra) {
 
-        /*
-        N = outra.N;
-        cap = outra.cap;
-        buffer = outra.buffer;
+        // copiamos os atributos da outra fila.
         inicio = outra.inicio;
         fim = outra.fim;
-        */
+        N = outra.N;
+        cap = outra.cap;
+
+        // o buffer anterior é deletado e um novo é criado, com os dados do buffer da outa fila copiados.
+        delete[] buffer;
+        buffer = new T[cap];
+
+        for (int i = 0; i < N; i++) {
+            buffer[i] = outra.buffer[i];
+        }
     }
 
     template <typename T> void fila<T>::enfileira(const T& algo) {

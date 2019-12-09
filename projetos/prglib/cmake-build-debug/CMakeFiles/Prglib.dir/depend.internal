@@ -10,7 +10,6 @@ CMakeFiles/Prglib.dir/main.cpp.o
  ../libs/hash.h
  ../libs/lista-impl.h
  ../libs/lista.h
- ../libs/pilha-impl.h
  ../libs/pilha.h
  ../prglib.h
  /home/layzacs/projetos/PRG29003/projetos/prglib/main.cpp

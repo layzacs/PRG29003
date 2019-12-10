@@ -1,30 +1,30 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 #include <prglib.h>
 
+using prglib::lista;
+
 using namespace std;
-using prglib::fila;
 
 int main() {
-    fila<int> f1(10); // cria uma fila chamada "f1", com capacidade 10
+
+    lista<string> list;
+    lista<string> lista;
 
 
-    // enfileira os números 5, 8, 2 e 4 na fila "f1"
-    f1.enfileira(5);
-    f1.enfileira(8);
-    f1.enfileira(2);
-    f1.enfileira(4);
 
-    fila<int> f2(f1);
+    list.anexa("b");
+    list.anexa("b");
+    list.anexa("a");
+    list.anexa("a");
+    list.anexa("b");
 
-    while (!f1.vazia()) {
-        cout << f1.desenfileira() << endl;
+    lista = list;
+
+    if (list == lista) {
+        cout << "BIRIRIRIRIRIRI" << endl;
     }
 
-    while (!f2.vazia()) {
-        cout << f2.desenfileira() << endl;
-    }
+return 0;
 
-    // desenfileira um por um dos dados da fila, mostrando-os na tela, até
-    // que a fila fique vazia
-    return 0;
 }

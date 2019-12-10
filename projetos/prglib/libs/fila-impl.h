@@ -13,7 +13,7 @@ namespace prglib {
         inicio = 0;
         fim = 0;
         // o new cria uma área de memória para guardar valores da variável passada. O vetor de tamanho especificado é criado abaixo.
-        buffer = new int[cap];
+        buffer = new T[cap];
     }
 
     template <typename T> fila<T>::fila(const fila& orig) {
@@ -25,7 +25,9 @@ namespace prglib {
         fim = orig.fim;
         // o buffer não pode ser copiado como os outros parâmetros. Ele é deletado e criamos um novo, copiando da lista anterior seus valores.
         buffer = new T[cap];
-        for (int i = 0; i < N; i++) {
+
+
+        for (int i = 0; i < cap; i++) {
             buffer[i] = orig.buffer[i];
         }
 
@@ -87,7 +89,8 @@ namespace prglib {
     }
 
     template <typename T> T & fila<T>::frente() {
-        return inicio;
+        if (vazia()) throw -1;
+        return buffer[inicio];
     }
 
     template <typename T> bool fila<T>::vazia() const {
@@ -105,6 +108,16 @@ namespace prglib {
     template <typename T> unsigned int fila<T>::comprimento() const {
         return N;
     }
+
+    template <typename T> void fila<T>::esvazia() {
+        if (vazia()) return;
+        delete[] buffer;
+        buffer = new T[cap];
+        N = 0;
+
+    }
+
+
 
 } // fim namespace
 

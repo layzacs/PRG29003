@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   pilha.h
  * Author: msobral
  *
@@ -9,48 +9,53 @@
 #define	PILHA_H
 
 #include <cstdlib>
-#include <stack>
 
 namespace prglib {
-    
-template <typename T> class pilha : private std::stack<T> {
- public:
-  // construtor: deve-se informar a capacidade da pilha
-  pilha(unsigned int umaCapacidade);
- 
-  // construtor de cópia: cria uma pilha que é cópia de outra
-  pilha(const pilha<T>& outra);
- 
-  // destrutor da pilha
-  ~pilha();
- 
-  // operador de atribuição: torna esta pilha uma cópia de outra pilha
-  pilha<T> & operator=(const pilha<T> & outra);
- 
-  // operações da pilha
- 
-  virtual void push(const T & dado); // empilha um dado
- 
-  T pop(); // desempilha um dado
- 
-  virtual const T& top() const; // retorna o dado do topo da pilha, sem retirá-lo
 
-  // remove todos os dados da pilha
-  void esvazia();
-  
-  bool vazia() const;
-  bool cheia() const;
-  unsigned int comprimento() const;
-  unsigned int capacidade() const;
-  
-  void expande(unsigned int N);
- private:
-  unsigned int N;
-};
+    template <typename T> class pilha  {
+    public:
+        // construtor: deve-se informar a capacidade da pilha
+        pilha(unsigned int umaCapacidade);
+
+        // construtor de cópia: cria uma pilha que é cópia de outra
+        pilha(const pilha<T>& outra);
+
+        // destrutor da pilha
+        ~pilha();
+
+        // operador de atribuição: torna esta pilha uma cópia de outra pilha
+        pilha<T> & operator=(const pilha<T> & outra);
+
+        // operações da pilha
+
+        void push(const T & dado); // empilha um dado
+
+        T pop(); // desempilha um dado
+
+        const T& top() const; // retorna o dado do topo da pilha, sem retirá-lo
+
+        // retorna true se pilha estiver vazia
+        bool vazia() const;
+
+        // retorna true se pilha estiver cheia
+        bool cheia() const;
+
+        // retorna a quantidade de dados armazenados na pilha
+        unsigned int comprimento() const;
+
+        // esvazia a pilha
+        void esvazia();
+
+        // retorna a capacidade da pilha (quantos dados cabem nela)
+        unsigned int capacidade() const;
+
+    private:
+        unsigned int cap, topo;
+        T * buffer;
+    };
 
 } // fim do namespace
 
 #include <libs/pilha-impl.h>
 
 #endif	/* PILHA_H */
-

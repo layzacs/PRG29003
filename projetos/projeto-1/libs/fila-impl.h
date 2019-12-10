@@ -1,73 +1,111 @@
-/* 
- * File:   fila-imp.h
- * Author: msobral
- *
- * Created on 11 de Agosto de 2016, 13:59
- */
-
 #ifndef FILA_IMP_H
 #define	FILA_IMP_H
 
 namespace prglib {
-    
-template <typename T> fila<T>::fila(unsigned int N) : N(N){
-}
 
-template <typename T> fila<T>::fila(const fila& orig) {
-    *this = orig;
-}
+    template <typename T> fila<T>::fila(unsigned int max_itens) {
+        // não permite criar uma lista com capacidade de 0 dados
+        if (max_itens == 0) throw -1;
 
-template <typename T> fila<T>::~fila() {
-}
+        // todos os valores relacionados a fila são inicializados
+        cap = max_itens;
+        N = 0;
+        inicio = 0;
+        fim = 0;
+        // o new cria uma área de memória para guardar valores da variável passada. O vetor de tamanho especificado é criado abaixo.
+        buffer = new T[cap];
+    }
 
-template <typename T> fila<T>& fila<T>::operator=(const fila& outra) {
-    N = outra.N;
-    static_cast<std::queue<T>*>(this)->operator=(outra);
-    return *this;
-}
+    template <typename T> fila<T>::fila(const fila& orig) {
 
-template <typename T> void fila<T>::enfileira(const T& algo) {
-    if (this->size() == N) throw -1;
-    this->push(algo);
-}
+        //copiamos os atributos da fila original para a nova fila
+        N = orig.N;
+        cap = orig.cap;
+        inicio = orig.inicio;
+        fim = orig.fim;
+        // o buffer não pode ser copiado como os outros parâmetros. Ele é deletado e criamos um novo, copiando da lista anterior seus valores.
+        buffer = new T[cap];
+        for (int i = 0; i < N; i++) {
+            buffer[i] = orig.buffer[i];
+        }
 
-template <typename T> T fila<T>::desenfileira() {
-    if (this->size() == 0) throw -1;
-    T dado = this->front();
-    this->pop();
-    return dado;
-}
+    }
 
-template <typename T> const T & fila<T>::frente() const {
-    if (this->size() > 0) return this->front();
-    throw -1;
-}
+    template <typename T> fila<T>::~fila() {
+        // liberar a áera de memoria alocada pelo buffer.
+        // Como é vetor, precisa dos colchetes.
+        delete[] buffer;
+    }
 
-template <typename T> bool fila<T>::vazia() const {
-    return this->empty();
-}
+    template <typename T> fila<T>& fila<T>::operator=(const fila& outra) {
 
-template <typename T> bool fila<T>::cheia() const {
-    return this->size() == N;
-}
+        // copiamos os atributos da outra fila.
+        inicio = outra.inicio;
+        fim = outra.fim;
+        N = outra.N;
+        cap = outra.cap;
 
-template <typename T> unsigned int fila<T>::capacidade() const {
-    return N;
-}
+        // o buffer anterior é deletado e um novo é criado, com os dados do buffer da outa fila copiados.
+        delete[] buffer;
+        buffer = new T[cap];
 
-template <typename T> unsigned int fila<T>::comprimento() const {
-    return this->size();
-}
+        for (int i = 0; i < N; i++) {
+            buffer[i] = outra.buffer[i];
+        }
+    }
 
-template <typename T> void fila<T>::expande(unsigned int N) {
-    this->N = N;
-}
+    template <typename T> void fila<T>::enfileira(const T& algo) {
+        // se fila cheia, dispara exceção.
+        if (cheia()) throw -1;
+        // adicionamos o novo dado na primeira posição livre, apontada pela variavel fim.
+        buffer[fim] = algo;
 
-template <typename T> void fila<T>::esvazia() {
-    while (this->size() > 0) static_cast<std::queue<T>*>(this)->pop();
-}
+        // se ao somar um a variavel fim chegarmos no valor máximo da fila, fim se torna igual a 0.
+        if (fim+1 == cap) {
+            fim = 0;
+        } else {
+            fim++;
+        }
+        N++;
+
+    }
+
+    template <typename T> T fila<T>::desenfileira() {
+        // se fila vazia ger exceção.
+        if (vazia()) throw -1;
+
+        // o valor a ser desenfileirado é o que se encontra no inicio da fila (first in first out)
+        int desenfileirado = inicio;
+        // o inicio da fila passa a ser o valor seguinte.
+        inicio++;
+        // se o inicio estiver na ultima posição do vetor, ele passar a apontar para a posição 0 (fila circular).
+        if (inicio == cap) inicio = 0;
+        // dado desenfileirado diminui a quantidade de dados da fila em 1.
+        N--;
+        // retornamos valor desenfileirado
+        return buffer[desenfileirado];
+    }
+
+    template <typename T> T & fila<T>::frente() {
+        return inicio;
+    }
+
+    template <typename T> bool fila<T>::vazia() const {
+        return N == 0;
+    }
+
+    template <typename T> bool fila<T>::cheia() const {
+        return N == cap;
+    }
+
+    template <typename T> unsigned int fila<T>::capacidade() const {
+        return cap;
+    }
+
+    template <typename T> unsigned int fila<T>::comprimento() const {
+        return N;
+    }
 
 } // fim namespace
 
 #endif	/* FILA_IMP_H */
-

@@ -8,6 +8,8 @@
 #ifndef ARVORE_IMPL_H
 #define	ARVORE_IMPL_H
 
+#include "arvore.h"
+
 namespace prglib {
 
     template <typename T> arvore<T>::~arvore() {
@@ -23,14 +25,28 @@ namespace prglib {
         dir = nullptr;
     }
 
+    template<typename T> arvore<T>::arvore(const arvore <T> &outra) {
+        data = outra->data;
+
+        if (outra->esq != nullptr) {
+            esq = new arvore<T>(outra->esq);
+        }
+        else esq = nullptr;
+
+        if (outra->dir != nullptr) {
+            dir = new arvore<T>(outra->dir);
+        }
+        else dir = nullptr;
+
+    }
+
     // cria arvore a partir de um arquivo
     template <typename T> arvore<T>::arvore(istream &inp) {
 
-}
+    }
 
     template <typename T> arvore<T>::arvore(prglib::lista<T> &dados) {
-
-}
+    }
 
     template <typename T> void arvore<T>::adiciona(const T & algo) {
     arvore<T> * atual = this; // define um nodo apontando para a raiz da arvore
@@ -374,6 +390,8 @@ template <typename T> const T& arvore<T>::obtem_sucessor(const T & algo) const {
     if (esq) esq->escrevaSe(out);
     nivel--;
 }
+
+
 
 };
 

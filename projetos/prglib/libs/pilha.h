@@ -1,9 +1,18 @@
+/*
+ * File:   pilha.h
+ * Author: msobral
+ *
+ * Created on 11 de Agosto de 2016, 13:59
+ */
+
 #ifndef PILHA_H
 #define	PILHA_H
 
+#include <cstdlib>
+
 namespace prglib {
 
-    template <typename T> class pilha {
+    template <typename T> class pilha  {
     public:
         // construtor: deve-se informar a capacidade da pilha
         pilha(unsigned int umaCapacidade);
@@ -19,30 +28,34 @@ namespace prglib {
 
         // operações da pilha
 
-        virtual void push(const T & dado); // empilha um dado
+        void push(const T & dado); // empilha um dado
 
         T pop(); // desempilha um dado
 
-        virtual const T& top() const; // retorna o dado do topo da pilha, sem retirá-lo
+        const T& top() const; // retorna o dado do topo da pilha, sem retirá-lo
 
+        // retorna true se pilha estiver vazia
         bool vazia() const;
+
+        // retorna true se pilha estiver cheia
         bool cheia() const;
+
+        // retorna a quantidade de dados armazenados na pilha
         unsigned int comprimento() const;
+
+        // esvazia a pilha
         void esvazia();
+
+        // retorna a capacidade da pilha (quantos dados cabem nela)
         unsigned int capacidade() const;
 
     private:
-        // Topo da pilha (corresponde também à qtde de dados na pilha)
-        unsigned int topo;
-
-        // Capacidade da pilha (quantos dados cabem nela)
-        unsigned int cap;
-
-        // a área de memória onde são armazenados os dados (um vetor)
+        unsigned int cap, topo;
         T * buffer;
     };
 
 } // fim do namespace
 
-#endif	/* PILHA_H */
+#include <libs/pilha-impl.h>
 
+#endif	/* PILHA_H */

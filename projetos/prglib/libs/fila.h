@@ -6,9 +6,9 @@ namespace prglib {
     // Especificando que a classe pode ser de qualquer tipo de dados T, um tipo genérico
     template <typename T> class fila {
 
-    // Métodos da classe fila:
-    // Tudo no public pode ser acessado a partir de código externo da classe.
-    // Tudo no private pode ser acessado somente pelas própias instruções da classe.
+        // Métodos da classe fila:
+        // Tudo no public pode ser acessado a partir de código externo da classe.
+        // Tudo no private pode ser acessado somente pelas própias instruções da classe.
     public:
         // construtor: cria uma fila capaz de armazenmar até max_itens
         fila(unsigned int max_itens);
@@ -42,6 +42,9 @@ namespace prglib {
 
         // operador de atribuição: torna esta fila uma cópia da outra fila
         fila<T>& operator=(const fila<T> & outra);
+
+        void esvazia();
+
     private:
         // N: quantidade de dados armazenados na fila
         // cap: capacidade da fila

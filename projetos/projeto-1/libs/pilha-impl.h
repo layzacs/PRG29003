@@ -1,79 +1,97 @@
-/* 
- * File:   pilha-impl.h
- * Author: msobral
- *
- * Created on 11 de Agosto de 2016, 13:59
- */
-
 #ifndef PILHA_IMPL_H
 #define	PILHA_IMPL_H
 
-#include "pilha.h"
-
-
 namespace prglib {
-    
-template <typename T> pilha<T>::pilha(unsigned int umaCapacidade) : N(umaCapacidade){
-}
- 
-template <typename T> pilha<T>::pilha(const pilha& outra) : std::stack<T>(outra) {
-  N = outra.N;
-}
- 
-template <typename T> pilha<T>::~pilha() {
-}
 
-template <typename T> pilha<T> & pilha<T>::operator=(const pilha<T> & outra) {
-  N = outra.N;
-  esvazia();
-  pilha<T> aux(outra);
-  pilha<T> aux2(outra.N);
-  while (not aux.vazia()) aux2.push(aux.pop());
-  while (not aux2.vazia()) push(aux2.pop());
-}
- 
-template <typename T> void pilha<T>::esvazia() {
-    while (this->size() > 0) static_cast<std::stack<T>*>(this)->pop();
-}
- 
-template <typename T> void pilha<T>::push(const T & dado) {
-    if (cheia()) throw -1;
-    static_cast<std::stack<T>*>(this)->push(dado);
-}
- 
-template <typename T> T pilha<T>::pop() {
-  if (vazia()) throw -1;
-  T dado = static_cast<std::stack<T>*>(this)->top();
-  static_cast<std::stack<T>*>(this)->pop();
-  return dado;
-}
- 
-template <typename T> const T& pilha<T>::top() const{
-  if (vazia()) throw -1;
-  return static_cast<const std::stack<T>*>(this)->top();
-}
+    template <typename T> pilha<T>::pilha(unsigned int umaCapacidade) {
+        // Impossibilita criar pilha com capacidade 0
+        if (umaCapacidade == 0) throw -1;
+        // Inicializamos as variáveis da nova pilha
+        cap = umaCapacidade;
+        topo = 0;
+        buffer = new T[cap];
+    }
 
-template <typename T> unsigned int pilha<T>::capacidade() const {
-    return N;
-}
+    template <typename T> pilha<T>::pilha(const pilha& outra) {
+        // copiamos os atributos da pilha outra
+        cap = outra.cap;
+        topo = outra.topo;
 
-template <typename T> bool pilha<T>::cheia() const {
-    return this->size() == N;
-}
+        // é criado um buffer para a nova pilha. Os dados do buffer da outra pilha são copiados para ela.
+        buffer = new T[cap];
 
-template <typename T> bool pilha<T>::vazia() const {
-    return this->empty();
-}
+        for (int i = 0; i < topo; i++) {
+            buffer[i] = outra.buffer[i];
+        }
+    }
 
-template <typename T> unsigned int pilha<T>::comprimento() const {
-    return this->size();
-}
+    template <typename T> pilha<T>::~pilha() {
+        delete[] buffer;
+    }
 
-template <typename T> void pilha<T>::expande(unsigned int N) {
-    this->N = N;
-}
+    template <typename T> pilha<T> & pilha<T>::operator=(const pilha<T> & outra) {
+        // copiamos os atributos da pilha outra
+        cap = outra.cap;
+        topo = outra.topo;
+        // excluimos o buffer anterior da pilha.
+        delete[] buffer;
+        // é criado um buffer para a nova pilha. Os dados do buffer da outra pilha são copiados para ela.
+        buffer = new T[cap];
+
+        for (int i = 0; i < topo; i++) {
+            buffer[i] = outra.buffer[i];
+        }
+    }
+
+    template <typename T> void pilha<T>::esvazia() {
+        // deletamos o buffer e criamos um novo (para limpar os dados)
+        delete[] buffer;
+        buffer = new T[cap];
+        // o topo agora retorna a 0.
+        topo = 0;
+
+    }
+
+    template <typename T> void pilha<T>::push(const T & dado) {
+        if (cheia()) throw -1;
+        // subimos uma posição do vetor e adicionamos o dado a ele.
+        topo++;
+        buffer[topo] = dado;
+
+    }
+
+    template <typename T> T pilha<T>::pop() {
+        if (vazia()) throw -1;
+
+        // o dado a ser desempilhado se encontra no topo (first in last out)
+        int desempilhado = topo;
+        // topo passa a ser o dado anterior
+        topo--;
+
+        // retornamos o dado a ser desempilhado (nota-se que ele não foi excluido. Ele será sobrescrito quando um novo dado for inserido na pilha).
+        return buffer[desempilhado];
+    }
+
+    template <typename T> const T& pilha<T>::top() const{
+        return buffer[topo];
+    }
+
+    template <typename T> unsigned int pilha<T>::capacidade() const {
+        return cap;
+    }
+
+    template <typename T> bool pilha<T>::cheia() const {
+        return topo == cap;
+    }
+
+    template <typename T> bool pilha<T>::vazia() const {
+        return topo == 0;
+    }
+
+    template <typename T> unsigned int pilha<T>::comprimento() const {
+        return topo;
+    }
 
 }
 
 #endif	/* PILHA_IMPL_H */
-

@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 ../libs/arvore-impl.h
+arvore.h
+../libs/arvore.h
 
 ../libs/arvore.h
 istream
@@ -39,6 +41,8 @@ libs/hash-impl.h
 -
 
 ../libs/lista-impl.h
+lista.h
+../libs/lista.h
 
 ../libs/lista.h
 cstddef
@@ -58,7 +62,13 @@ memory
 libs/lista-impl.h
 -
 
+../libs/pilha-impl.h
+
 ../libs/pilha.h
+cstdlib
+-
+libs/pilha-impl.h
+-
 
 ../prglib.h
 libs/lista.h
@@ -74,6 +84,8 @@ libs/arvore.h
 
 /home/layzacs/projetos/PRG29003/projetos/prglib/main.cpp
 iostream
+-
+string
 -
 prglib.h
 -

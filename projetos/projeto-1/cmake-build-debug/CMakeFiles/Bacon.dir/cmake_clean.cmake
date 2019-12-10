@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Bacon.dir/main.cpp.o"
-  "CMakeFiles/Bacon.dir/Mapa.cpp.o"
-  "Bacon.pdb"
   "Bacon"
+  "Bacon.pdb"
+  "CMakeFiles/Bacon.dir/Mapa.cpp.o"
+  "CMakeFiles/Bacon.dir/main.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

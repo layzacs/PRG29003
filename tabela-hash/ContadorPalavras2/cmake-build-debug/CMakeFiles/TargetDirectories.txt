@@ -1,0 +1,8 @@
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/CMakeFiles/Prog.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/CMakeFiles/runTerm.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/googletest/CMakeFiles/rebuild_cache.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/googletest/CMakeFiles/gtest.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/googletest/CMakeFiles/edit_cache.dir
+/home/layzacs/Downloads/exercícios clion/contador_palavras2/ContadorPalavras2/cmake-build-debug/googletest/CMakeFiles/gtest_main.dir

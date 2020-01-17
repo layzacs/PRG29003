@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/layzacs/Downloads/exercícios clion/remove_repetidas/RemoveRepetidas/main.cpp
+fstream
+-
+iostream
+-
+string
+-
+prglib.h
+/home/layzacs/Downloads/exercícios clion/remove_repetidas/RemoveRepetidas/prglib.h
+
+/home/layzacs/Downloads/exercícios clion/remove_repetidas/RemoveRepetidas/prglib.h
+libs/lista.h
+-
+libs/fila.h
+-
+libs/pilha.h
+-
+libs/hash.h
+-
+libs/arvore.h
+-
+

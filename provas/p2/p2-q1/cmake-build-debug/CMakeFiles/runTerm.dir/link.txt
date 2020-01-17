@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/runTerm.dir/termtest.cpp.o CMakeFiles/runTerm.dir/Terminal.cpp.o  -o runTerm lib/libgtestd.a lib/libgtest_maind.a -lutil -L/home/layzacs/Downloads/prova2/P2-Questao1/libs -lprglib lib/libgtestd.a -lpthread 

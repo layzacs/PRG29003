@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-.././libs/BasicTree.h
+../libs/BasicTree.h
 libs/lista.h
 -
 memory
 -
 
-.././libs/arvore-impl.h
+../libs/arvore-impl.h
 arvore.h
-.././libs/arvore.h
+../libs/arvore.h
 
-.././libs/arvore.h
+../libs/arvore.h
 libs/BasicTree.h
 -
 libs/arvore-impl.h
 -
 
-.././libs/fila-impl.h
+../libs/fila-impl.h
 
-.././libs/fila.h
+../libs/fila.h
 queue
 -
 libs/fila-impl.h
 -
 
-.././libs/hash-impl.h
+../libs/hash-impl.h
 
-.././libs/hash.h
+../libs/hash.h
 unordered_map
 -
 string
@@ -44,18 +44,18 @@ memory
 libs/hash-impl.h
 -
 
-.././libs/lista-impl.h
-chrono
--
+../libs/lista-impl.h
+lista.h
+../libs/lista.h
 
-.././libs/lista.h
+../libs/lista.h
 cstddef
 -
 ostream
 -
-string
+istream
 -
-list
+string
 -
 algorithm
 -
@@ -66,11 +66,11 @@ memory
 libs/lista-impl.h
 -
 
-.././libs/pilha-impl.h
+../libs/pilha-impl.h
 pilha.h
-.././libs/pilha.h
+../libs/pilha.h
 
-.././libs/pilha.h
+../libs/pilha.h
 cstdlib
 -
 stack
@@ -78,7 +78,7 @@ stack
 libs/pilha-impl.h
 -
 
-.././prglib.h
+../prglib.h
 libs/lista.h
 -
 libs/fila.h
@@ -89,10 +89,6 @@ libs/hash.h
 -
 libs/arvore.h
 -
-
-/home/layzacs/projetos/PRG29003/projetos/projeto-2/main.cpp
-proc.h
-/home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.h
 
 /home/layzacs/projetos/PRG29003/projetos/projeto-2/proc.cpp
 proc.h

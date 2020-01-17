@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "Bacon"
+  "Bacon.pdb"
   "CMakeFiles/Bacon.dir/main.cpp.o"
   "CMakeFiles/Bacon.dir/proc.cpp.o"
-  "Bacon.pdb"
-  "Bacon"
 )
 
 # Per-language clean rules from dependency scanning.

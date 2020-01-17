@@ -4,6 +4,10 @@ bool operator<(const ator & s1, const ator & s2) {
     return s1.n_filmes > s2.n_filmes;
 }
 
+bool operator>(const ator & s1, const ator & s2) {
+    return s1.n_filmes > s2.n_filmes;
+}
+
 
 lista<string> separa(const string & texto, const string & sep) {
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Prg2_demo.dir/main.cpp.o"
   "CMakeFiles/Prg2_demo.dir/dicionario.cpp.o"
-  "Prg2_demo.pdb"
+  "CMakeFiles/Prg2_demo.dir/main.cpp.o"
   "Prg2_demo"
+  "Prg2_demo.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

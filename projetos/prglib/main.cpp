@@ -1,30 +1,13 @@
 #include <iostream>
 #include <string>
 #include <prglib.h>
+#include <fstream>
 
-using prglib::lista;
 
 using namespace std;
+using prglib::arvore;
 
 int main() {
 
-    lista<string> list;
-    lista<string> lista;
-
-
-
-    list.anexa("b");
-    list.anexa("b");
-    list.anexa("a");
-    list.anexa("a");
-    list.anexa("b");
-
-    lista = list;
-
-    if (list == lista) {
-        cout << "BIRIRIRIRIRIRI" << endl;
-    }
-
-return 0;
-
+    return 0;
 }

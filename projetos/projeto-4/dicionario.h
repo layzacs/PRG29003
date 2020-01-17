@@ -23,6 +23,9 @@ struct Verbete {
     bool operator<(const Verbete & termo1) const {
         return palavra < termo1.palavra;
     }
+    bool operator>(const Verbete & termo1) const {
+        return palavra > termo1.palavra;
+    }
     bool operator==(const Verbete & termo1) const {
         return palavra == termo1.palavra;
     }
